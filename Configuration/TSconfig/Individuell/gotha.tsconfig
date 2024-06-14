@@ -1,0 +1,25 @@
+TCEFORM.tt_content {
+	layout {
+		altLabels{
+			1 = Layout 1
+			2 = Left Red Border and Color
+			3 = container wrap
+		}
+		addItems {
+			4 = Right Padding, Color Red
+			5 = Background Grey
+			6 = Background dunkel Grau
+			7 = container wrap + text uppercase, fett
+			#6 = Auf- und Zuklappbare Inhalte
+			#7 = Text Bild Text
+			#8 = Text Text Text
+			100 = Auf- und Zuklappbare Inhalte - offen (nur gridelements 100% und 50% 50%)
+			101 = Auf- und Zuklappbare Inhalte - geschlossen (nur gridelements 100% und 50% 50%)
+		}
+	}
+	//positionierung
+	#spaceBefore.label.de = Absolute: links - Normal: oben
+	#spaceAfter.label.de = Absolute: oben - Normal: unten
+}
+mod.SHARED.colPos_list = 0,1,2,3,4,5,6,7,8
+RTE.config.tt_content.bodytext.preset = full

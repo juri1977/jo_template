@@ -1,0 +1,14 @@
+html, body, h1, h2, h3, h4, h5, h6, div, span, input, textarea, a {
+    font-family: FreeSans;
+}
+.container,
+.gridcontent,
+.footer-outer,
+.menu_square,
+.joInstDetail,
+.alt_view .joFound,
+.newKacheln,
+.frame-type-jocontent_c21 {
+	padding-left: 0;
+	padding-right: 0;
+}

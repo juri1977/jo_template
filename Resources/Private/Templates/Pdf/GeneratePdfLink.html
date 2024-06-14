@@ -1,0 +1,15 @@
+<f:link.action action="" arguments="{argument:settings.pdfQueryParameter}" addQueryString="1" title="Meine Recherche-Daten als PDF-Datei exportieren">
+  	<div class="btn btn-primary">
+  		<span class="sprite_mask" id="export-pdf">
+  			<f:if condition="{f:cObject(typoscriptObjectPath: 'lib.gpvar', data: 'test')} == 'test'">
+				<f:then>
+					<div class="joSprite" title="Meine Recherche-Daten als PDF-Datei exportieren"></div>
+				</f:then>
+				<f:else>
+					<f:image src="{f:uri.resource(path:'Images/sprite.svg', extensionName:'jo_museo')}" alt="Meine Recherche-Daten als PDF-Datei exportieren" title="Meine Recherche-Daten als PDF-Datei exportieren" />
+				</f:else>
+			</f:if>
+  		</span><span class="l">als PDF-Datei exportieren
+  		{f:translate(key:'LLL:EXT:jo_bkr_base/Resources/Private/Language/locallang.xlf:jo_bkr_base.createpdf')}</span>
+  	</div>
+</f:link.action>

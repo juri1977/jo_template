@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="2022-08-03T11:03:33Z" product-name="jo_template">
+        <header/>
+        <body>
+            <trans-unit id="jo_bkr_base.provinienz">
+                <source>Vorbesitz:</source>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.common">
+                <source>Person/Institution:</source>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.locpublication">
+                <source>Ort:</source>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.umfang">
+                <source>Size, illustration, format:</source>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.part">
+                <source>Teil:</source>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.contents">
+                <source>Inhalt:</source>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.origin">
+                <source>Herkunftsort:</source>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.classProject">
+                <source>Project:</source>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.titleUniform">
+                <source>Einheitstitel:</source>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.objectType">
+                <source>Object category:</source>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.breadcrumbs.label_objectType">
+                <source>Object category</source>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.breadcrumbs.objectType">
+                <source>Object category:</source>
+            </trans-unit>
+            <trans-unit id="flash.objectType">
+                <source>Object category</source>
+            </trans-unit>
+            <trans-unit id="search_objectType">
+                <source>according to the following object categories:</source>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.breadcrumbs.locationFirstletter">
+                <source>Place:</source>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.breadcrumbs.label_locationFirstletter">
+                <source>Place</source>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.breadcrumbs.location">
+                <source>Place:</source>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.breadcrumbs.entityFirstletter">
+                <source>Person/Institution:</source>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.breadcrumbs.label_entityFirstletter">
+                <source>Person/Institution</source>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.breadcrumbs.entitynorole">
+                <source>Person/Institution:</source>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.contextorig">
+                <source>Delivered via:</source>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.pat">
+                <source>Funding:</source>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.patron">
+                <source>Funding:</source>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.licence">
+                <source>License metadata:</source>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.parent">
+                <source>Included in:</source>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.showtime">
+                <source>Date:</source>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.inventarnummer">
+                <source>Shelfmark:</source>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.shelfmark">
+                <source>Shelfmark:</source>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.classificationtags">
+                <source>Keyword:</source>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.breadcrumbs.classificationtags">
+                <source>Keyword:</source>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.breadcrumbs.classificationtagsFirstletter">
+                <source>Keyword:</source>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.Gotha Imdas DAM_inventarnummer">
+                <source>Inventory number:</source>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.Gotha Kalliope_inventarnummer">
+                <source>Signatur:</source>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.format">
+                <source>Format:</source>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.altFormat">
+                <source>Format:</source>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.note">
+                <source>Description:</source>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.vd18">
+                <source>Bibliographischer Nachweis:</source>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.objectdimension">
+                <source>Dimensions:</source>
+            </trans-unit>
+            <trans-unit id="feedback.text.anrede">
+                <source> </source>
+            </trans-unit>
+            <trans-unit id="feedback.text.text">
+                <source>Our data sets are in constant development. If you have additional information about this object or discovered an error, please write to us.</source>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.oldinventarnummer">
+                <source>Further object number:</source>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.person depicted">
+                <source>Abgebildete Person:</source>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.person mentioned">
+                <source>Erwähnte Person:</source>
+            </trans-unit>
+            <trans-unit id="c11.topicdb">
+                <source>Project type:</source>
+            </trans-unit>
+            <trans-unit id="c11.keywords">
+                <source>Topic:</source>
+            </trans-unit>
+            <trans-unit id="c11.times">
+                <source>Time period:</source>
+            </trans-unit>
+            <trans-unit id="c11.classfication">
+                <source>Institution:</source>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.Fund">
+                <source>Origin:</source>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.place depicted">
+                <source>abgebildeter Ort:</source>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.place mentioned">
+                <source>erwähnter Ort:</source>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.content">
+                <source>Abbildungen ZIP</source>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.content_3d">
+                <source>3d ZIP</source>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.content_360">
+                <source>360° ZIP</source>
+            </trans-unit>
+            <trans-unit id="black_white">
+                <source>black/white view</source>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.zugriff.und.nutzung">
+                <source>Access and usage options</source>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.kontakt.info">
+                <source>Contact</source>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.admin.details">
+                <source>Administrative details</source>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.moreobject.info">
+                <source>Additional information</source>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.biblio.info">
+                <source>Bibliography (selection)</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

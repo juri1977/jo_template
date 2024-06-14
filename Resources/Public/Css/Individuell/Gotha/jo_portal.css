@@ -1,0 +1,2217 @@
+/* @all -> nur Temporär - muss aus dem col-md-8 muss aus der Image-section entfernt werden */
+.detailimage {
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+.joGridview .grid-item {
+  margin-bottom: 30px;
+}
+
+/* Daten aus ICON Control */
+.joSprite {
+  background-image: url(/typo3conf/ext/jo_museo/Resources/Public/Images/sprite_portal_black.svg);
+  width: 100%;
+  height: 100%;
+  color: transparent;
+  text-align: center;
+  cursor: pointer;
+  display: block;
+  background-color: transparent;
+  background-size: 950px;
+  background-repeat: no-repeat;
+}
+.colbox-container:hover,
+.colbox-container.active {
+  padding: 0 15px;
+  background-color: transparent;
+}
+.colbox-container .colbox-button {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  margin-top: 3px;
+  background-image: url(/typo3conf/ext/jo_museo/Resources/Public/Images/sprite_portal_black.svg);
+  background-color: transparent;
+  background-size: 860px;
+  background-repeat: no-repeat;
+  background-position: -559px -2px;
+  backface-visibility: hidden;
+}
+.colbox-button .ml_number {
+  background: #8e0201;
+  color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  width: 18px;
+  right: -5px;
+  height: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+}
+.bold {
+  font-weight: 600;
+}
+.text-underline {
+  text-decoration: underline;
+}
+.status-container .status-info-box {
+  color: black;
+}
+.status-container {
+  z-index: 100000;
+  position: relative;
+}
+.joSameYears {
+  margin: 10px 0px 10px 20%;
+}
+.joSameYears-text {
+  text-align: center;
+  padding: 10px;
+}
+div#chart_div {
+  height: 90px;
+  margin: 30px 5px 0;
+}
+.del_timefilter a:hover {
+  color: white;
+}
+.del_timefilter .img-container div.joSprite {
+  background-image: url(/typo3conf/ext/jo_museo/Resources/Public/Images/sprite_portal_white.svg);
+}
+li:hover .joSprite,
+a.c_button.active.show .joSprite {
+  background-image: url(/typo3conf/ext/jo_museo/Resources/Public/Images/sprite_portal_white.svg);
+}
+a[href="#classProject"] .joSprite {
+  background-position: -522px 0px;
+}
+a[href="#datasource"] .joSprite {
+  background-position: -617px -280px;
+}
+a[href="#language"] .joSprite {
+  background-position: -284px -189px;
+}
+a[href="#tenantHierarchy"] .joSprite,
+a[href="#tenant"] .joSprite {
+  background-position: -427px 0px;
+}
+#map-list a[href="#tenantHierarchy"] .joSprite,
+#map-list a[href="#tenant"] .joSprite {
+  background-position: -90vw 0.1vw;
+}
+a[href="#entityFirstletter"] .joSprite {
+  background-position: -378px -47px;
+}
+#map-list a[href="#entityFirstletter"] .joSprite {
+  background-position: -79.5vw -9.5vw;
+}
+a[href="#locationFirstletter"] .joSprite {
+  background-position: -95px 0px;
+}
+a[href="#objectTypeHierarchy"] .joSprite,
+a[href="#objectType"] .joSprite {
+  background-position: -900px 0px;
+}
+a[href="#objectsPlantsFirstletter"] .joSprite {
+  background-position: -710px -93px;
+}
+a[href="#classificationtagsFirstletter"] .joSprite {
+  background-position: -235px -142px;
+}
+a[href="#timeline"] .joSprite {
+  background-position: -141px 1px;
+}
+a[href="#searchparams"] .joSprite {
+  background-image: url(/typo3conf/ext/jo_museo/Resources/Public/Images/sprite_portal_black.svg);
+  background-position: -902px -94px;
+}
+a.active[href="#searchparams"] .joSprite,
+a[href="#searchparams"]:hover .joSprite {
+  background-image: url(/typo3conf/ext/jo_museo/Resources/Public/Images/sprite_portal_white.svg);
+}
+a[href="#classificationtags"] .joSprite {
+  background-position: -236px -141px;
+}
+a[href="#material"] .joSprite {
+  background-position: -523px -279px;
+}
+.joSprite.material {
+  background-image: url(/typo3conf/ext/jo_museo/Resources/Public/Images/sprite_portal_white.svg);
+  background-position: -527px -284px;
+}
+.joSprite.objectsPlants {
+  background-image: url(/typo3conf/ext/jo_museo/Resources/Public/Images/sprite_portal_white.svg);
+  background-position: -720px -98px;
+}
+.joSprite.fulltext {
+  background-image: url(/typo3conf/ext/jo_museo/Resources/Public/Images/sprite_portal_white.svg);
+  background-position: -766px -3px;
+}
+.joSprite.Boundingbox {
+  background-image: url(/typo3conf/ext/jo_museo/Resources/Public/Images/sprite_portal_white.svg);
+  background-position: -766px -3px;
+}
+.joSprite.classificationtags {
+  background-image: url(/typo3conf/ext/jo_museo/Resources/Public/Images/sprite_portal_white.svg);
+  background-position: -243px -148px;
+}
+.joSprite.tenant,
+.joSprite.tenantHierarchy {
+  background-image: url(/typo3conf/ext/jo_museo/Resources/Public/Images/sprite_portal_white.svg);
+  background-position: -435px -4px;
+}
+.joSprite.classProject {
+  background-image: url(/typo3conf/ext/jo_museo/Resources/Public/Images/sprite_portal_white.svg);
+  background-position: -528px -6px;
+}
+.joSprite.datasource {
+  background-image: url(/typo3conf/ext/jo_museo/Resources/Public/Images/sprite_portal_white.svg);
+  background-position: -625px -288px;
+}
+.joSprite.language {
+  background-image: url(/typo3conf/ext/jo_museo/Resources/Public/Images/sprite_portal_white.svg);
+  background-position: -292px -195px;
+}
+.joSprite.timeline {
+  background-image: url(/typo3conf/ext/jo_museo/Resources/Public/Images/sprite_portal_white.svg);
+  background-position: -148px -4px;
+}
+.joSprite.location {
+  background-image: url(/typo3conf/ext/jo_museo/Resources/Public/Images/sprite_portal_white.svg);
+  background-position: -102.2px -4px;
+}
+.joSprite.objectTypeHierarchy,
+.joSprite.objectType {
+  background-image: url(/typo3conf/ext/jo_museo/Resources/Public/Images/sprite_portal_white.svg);
+  background-position: -908px -4px;
+}
+.joSprite.bcpId {
+  background-image: url(/typo3conf/ext/jo_museo/Resources/Public/Images/sprite_portal_white.svg);
+  background-position: -151px -241px;
+}
+.joSprite.imageonly {
+  background-position: -6px -3px;
+}
+div#material.tab-pane.active.show,
+div#classProject.tab-pane.active.show,
+div#datasource.tab-pane.active.show,
+div#language.tab-pane.active.show,
+div#tenant.tab-pane.active.show,
+div#tenantHierarchy.tab-pane.active.show,
+div#timeline.tab-pane.active.show,
+div#objectType.tab-pane.active.show,
+div#objectTypeHierarchy.tab-pane.active.show,
+div#classificationtags.tab-pane.active.show,
+div#classificationTopic.tab-pane.active.show {
+  background: transparent;
+}
+.facettes .joAlphIndex-icon {
+  background-position: -725px -127px;
+  background-size: 800px !important;
+}
+.joListandtable a {
+  width: 40px;
+  height: 40px;
+  color: transparent;
+  text-align: center;
+  cursor: pointer;
+  display: block;
+  background-image: url(/typo3conf/ext/jo_museo/Resources/Public/Images/sprite_portal_black.svg);
+  background-color: transparent;
+  background-size: 850px;
+  background-repeat: no-repeat;
+  font-size: 0;
+  transition: background-color 1s ease;
+}
+.joListandtable li:hover a,
+.joListandtable li.active a {
+  background-color: rgba(0, 0, 0, .7);
+}
+.joListandtable .joTable-icon[title='Gridansicht'],
+.joListandtable .joTable-icon[title='Gallerieansicht'] {
+  background-position: -129px -45px;
+}
+.addGradient .joSprite,
+.table .addGradient .joSprite {
+  background-image: url(/typo3conf/ext/jo_museo/Resources/Public/Images/sprite_portal_white.svg);
+}
+
+/*
+.breadcrumbs a:hover, 
+.content_wrap a {
+    color: #383838;
+    font-weight: 400;
+}
+*/
+.detail.control_button .addGradient .joSprite {
+  background-position: -73px -76px;
+  background-size: 750px;
+}
+.detail.control_button .listBookmark .addGradient .joSprite {
+  background-position: -94px -128px;
+  background-size: 650px;
+}
+.viewer.control_button .addGradient .joSprite {
+  background-position: 4px -58px;
+  background-size: 620px;
+}
+.colbox.control_button .addGradient .joSprite {
+  background-position: -95px -130px;
+  background-size: 650px;
+}
+.joAutocomplete-container .joAutoPer-icon,
+.facettes .joAlphIndex-icon {
+  display: inline-block;
+  width: 30px;
+  height: 25px;
+  vertical-align: middle;
+  background-image: url(/typo3conf/ext/jo_museo/Resources/Public/Images/sprite_portal_white.svg);
+  background-color: transparent;
+  background-size: 950px;
+  background-repeat: no-repeat;
+}
+.joAutocomplete-container .joAutoPer-icon {
+  background-position: -438px -60px;
+}
+.joFacettedSearch a img {
+  top: -484px;
+  left: -87px;
+}
+#joDeleteIcon .joSprite {
+  background-image: url(/typo3conf/ext/jo_museo/Resources/Public/Images/sprite_portal_white.svg);
+  background-position: -569px 0px;
+}
+#searchparams .joFacetteItem .img-container .joSprite {
+  background-image: url(/typo3conf/ext/jo_museo/Resources/Public/Images/sprite_portal_white.svg);
+  background-position: -209px 0px;
+  background-size: 350px;
+}
+
+/* Merkliste */
+
+/*
+.colbox_text h2 {
+    padding: 0 0 20px 0;
+    margin: 0;
+    font-size: 40px;
+    font-weight: 500;
+}
+*/
+
+/*
+.colbox_export .detail.control_button{
+  display: none !important;
+}
+*/
+
+/* Suchmaske und Facettenübersicht */
+.search_wrap.alt_view {
+  padding-right: 15%;
+  padding-left: 15%;
+}
+.colbox_text,
+.facettes,
+.sort_and_view_wrap,
+.alternativeview_1 .joTimeLineAndFilter,
+.alternativeview_1 .search_mask_outer_wrap,
+.results {
+  padding-right: 5%;
+  padding-left: 5%;
+}
+.alternativeview_1 .filter_wrap {
+  padding-right: 0%;
+  padding-left: 0%;
+}
+.alt_view .joControls li {
+  line-height: 0;
+}
+.alt_view .joControls li a.c_button {
+  background-color: #d2d3cd;
+  margin: unset;
+  margin-right: 10px;
+  height: 50px;
+  margin-top: 10px;
+}
+.alternativeview_1 .joControls li a.cb01.c_button {
+  padding-left: 10px;
+}
+.alternativeview_1 .cb01.c_button .joSprite {
+  display: none;
+}
+.facettes .tab-pane-inactive,
+.facettes .tab-pane {
+  padding-top: 1px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #d2d3cd;
+}
+.facettes #searchparams {
+  padding-top: 10px;
+  border-bottom: none;
+}
+
+/*
+.imageSwitch {
+    padding: 15px 15% 10px;
+}
+*/
+#map-list .controls_wrap,
+#map-list .search_wrap.alt_view {
+  padding-left: 0;
+  padding-right: 0;
+}
+.alt_view .joControls li a.active:focus,
+.alt_view .joControls li a.active:hover,
+.alt_view .joControls li a.active,
+.alt_view .joControls li a:hover,
+.alt_view .joControls li a[aria-expanded="true"],
+.searchform .search_button,
+.facettes {
+  background-color: #383838;
+}
+.search_type_wrap {
+  font-size: 16px;
+  align-items: stretch;
+  justify-content: space-around;
+  background-color: rgba(0, 0, 0, .7);
+  margin-top: 15px;
+}
+.search_type_wrap div {
+  padding: 2px 15px;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.search_type_wrap div.active {
+  background-color: rgba(0, 0, 0, .9);
+}
+.search_type_wrap div.fuzzy_search {
+  border-bottom: 1px solid white;
+  cursor: pointer;
+}
+.expert_search {
+  cursor: pointer;
+}
+.search_masks {
+}
+.searchform {
+}
+.searchform form {
+  display: block;  /* border: rgba(0, 0, 0, 0.7) 1px solid; */
+}
+.searchform input {
+  vertical-align: middle;
+  border: none;
+  outline: none;
+  border-radius: 0;
+  margin: 0;
+  height: 50px;
+  padding: 0;
+}
+.searchform .search_box {
+
+  /* width: calc(100% - 50px); */
+  width: 100%;
+  font-size: 18px;
+  padding: 0 20px;
+}
+.searchform.expert .search_box {
+  margin: 0 0 20px;
+}
+#joSearch .search_box {
+  width: calc(100% - 50px);
+  margin-bottom: 0;
+}
+.submit-container {
+  text-align: right;
+}
+.submit-content {
+  display: inline-block;
+  background-color: #696b6d;
+}
+.submit-content .submit-label {
+  padding: 0 10px 0 15px;
+  color: white;
+  cursor: pointer;
+  line-height: 50px;
+  margin: 0;
+  vertical-align: middle;
+}
+#joExpertSearch {
+  padding: 15px;
+}
+#joExpertSearch .search_box {
+  border: 1px solid #696b6d;
+}
+.searchform .search_button {
+  background-image: url(/typo3conf/ext/jo_museo/Resources/Public/Images/sprite_portal_white.svg);
+  background-size: 860px;
+  background-repeat: no-repeat;
+  background-position: -684px 2px;
+  width: 50px;
+  cursor: pointer;
+}
+.toggle_search_filter_outerwrap {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  margin: 0;
+}
+.alternativeview_1 .filter_wrap,
+.alternativeview_1 .search_mask_outer_wrap,
+.alt_view .joFound,
+.toggle_search_filter_outerwrap,
+.controls_wrap {
+  background-color: #dcded6;
+}
+#map-list .alt_view .joFound,
+#map-list .toggle_search_filter_outerwrap,
+#map-list .controls_wrap {
+  background-color: white;
+}
+#map-list .toggle_search_filter_outerwrap {
+  padding: 15px;
+}
+.alt_view .joFound .joFound-text {
+  border-top: none;
+  font-size: 18px;
+}
+#map-list .joFound .joFound-text {
+  background-color: #600504;
+  color: white;
+}
+.alt_view .joFound {
+  border-bottom: 3px black solid;
+}
+#map-list .alt_view .joFound {
+  border-bottom: none;
+  padding-left: 0;
+  padding-right: 0;
+}
+body .alt_view .tab-content .tab-pane {
+  padding: 20px 0;
+}
+.index_wrapper .button_wrap {
+  display: inline-block;
+  padding: 3px 3px 0 0;
+  border-radius: 5px;
+  position: relative;
+  line-height: 100%;
+  color: #ffffff;
+  margin: 0;
+}
+.img-main-text {
+  font-size: 14px;
+}
+.toggletext {
+  padding: 0;
+  border-radius: 0;
+}
+a.link_external {
+
+  /*
+  color: white;
+  padding: 4px 0px 4px 7px;
+  */
+  margin: 2px 0;
+  word-break: break-all;
+  word-break: break-word;
+}
+#map-list a.link_external,
+#map-list .control_button a {
+  background-color: transparent;
+}
+a.link_external_small:after,
+a.link_external:after {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 3px;
+  top: 50%;
+  margin-top: -10px;
+  background-image: url(/typo3conf/ext/jo_museo/Resources/Public/Images/sprite.svg);
+  background-position: -210px -71px;
+  background-color: transparent;
+  background-size: 250px;
+  background-repeat: no-repeat;
+}
+a.link_external:after {
+  position: relative;
+  display: inline-block;
+}
+.with-external > a.link_external:after {
+  background-position: -187px -71px;
+  top: 4px;
+  margin-left: 5px;
+}
+a.link_external_small {
+  padding: 0 27px 0 0;
+  color: unset;
+}
+a.link_external,
+a.link_external_small:after {
+  background-color: transparent;
+  border-radius: 4px;
+}
+.item_wrap {
+  padding-bottom: 2px;
+  margin-bottom: 2px;
+}
+.item_wrap:last-child {
+  border: none;
+  word-break: break-word;
+  hyphens: auto;
+}
+.entity_wrap .item_wrap {
+  border-bottom: none;
+}
+.item_wrap.ha .item_wrap,
+.item_wrap.ha .divider,
+.item_wrap.ha .item_content_wrap {
+  display: inline-block;
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.f-container {
+  column-count: 4;
+}
+.f-container a {
+  display: block;
+  padding: 5px 15px;
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+.searchcontrols li {
+  width: 100px;
+  overflow: hidden;
+  background-color: black;
+  color: white;
+  padding: 5px 10px;
+  margin: 1px 1px 0 0;
+  height: 90px;
+}
+.searchcontrols li.delete {
+  background-color: red;
+}
+.searchcontrols li a {
+  height: 100%;
+  display: block;
+}
+.datail-metadata {
+  font-size: 1.6rem;
+}
+.breadcrumbs {
+  font-size: 18px;
+}
+.btn_container {
+  right: 0;
+  z-index: 20;
+  padding: 0 0 10px 10px;
+}
+.btn_container.bottom {
+  bottom: 0;
+}
+.top {
+  top: 0;
+}
+.dark_transparent_bg {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.text-shadow {
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
+}
+
+/* Map */
+#mapdiv {
+  height: 80vh !important;
+}
+
+/* CTA Buttons Listview */
+.results .viewer .addGradient .joSprite,
+.results .detail .addGradient .joSprite,
+.results .colbox .addGradient .joSprite {
+  background-image: url(/typo3conf/ext/jo_template/Resources/Public/Images/sprite_portal_white.svg);
+  background-color: transparent;
+  background-repeat: no-repeat;
+  height: 100%;
+}
+.results .detail .addGradient .joSprite {
+  background-size: 750px;
+  background-position: -74px -76px;
+}
+.results .viewer a:hover .addGradient .joSprite,
+.results .detail a:hover .addGradient .joSprite {
+  background-image: url(/typo3conf/ext/jo_template/Resources/Public/Images/sprite_portal_white.svg);
+}
+.results .viewer .addGradient .joSprite {
+  background-size: 620px;
+  background-position: 4px -64px;
+}
+.results .colbox .addGradient .joSprite {
+  background-size: 650px;
+  background-position: -614px -126px;
+}
+.results .colbox .listBookmarkRemove .addGradient .joSprite {
+  background-position: -582px -126px;
+}
+.results .colbox a.listBookmarkRemove:hover .addGradient .joSprite {
+
+  /* background-image: url(/typo3conf/ext/jo_template/Resources/Public/Images/sprite_portal_black.svg); */
+}
+.results .addGradient .joSprite {
+  border: none;
+}
+.control_button .listBookmarkRemove > span,
+.listBookmarkRemove .addGradient {
+  background-color: #9a1515;
+  color: white;
+}
+#joDeleteIcon.joDeleteIcon_noResults,
+#joDeleteIcon .joSprite {
+  background-color: #8E0201;
+}
+#joDeleteIcon.joDeleteIcon_noResults {
+  color: white;
+  padding-right: 15px;
+}
+.noResults_wrap {
+  text-align: center;
+}
+.joFacettedSearch .and_or_toggle {
+  display: inline-block;
+  vertical-align: middle;
+}
+.colbox {
+
+  /*
+  display: none;
+  */
+}
+.joAndOrSwitch input.joAndOrCheck:checked ~ .slider,
+.joAndOrSwitch .slider,
+.joAlphabetIndex li a:hover,
+.joAlphabetIndex li.active a {
+  background-color: #8E0201;
+}
+
+/*
+.control_wrap {
+padding: 20px 0 0 0;
+}
+*/
+.control_button a {
+  border-radius: 0;
+  background-color: #383838;
+}
+.control_button a div,
+.control_button .link div,
+.control_button .inactive_link div,
+.control_button a:hover div,
+.control_button .link:hover div,
+.control_button .inactive_link:hover div {
+  color: black;
+  border: none;
+  width: 40px;
+  height: 40px;
+  margin: 0;
+}
+.control_button span {
+  color: white;
+  align-items: center;
+  padding: 5px 10px;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+.addGradient .joSprite,
+.table .addGradient .joSprite {
+  background-image: url(/typo3conf/ext/jo_template/Resources/Public/Images/sprite_portal_white.svg);
+}
+.jo-link-extern .joSprite {
+  background-position: -420px -40px;
+  background-size: 700px;
+}
+
+/* Listenansicht/Teile Detailansicht */
+.childobjects,
+.results {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.joDetail .joGridview.results {
+  padding: 0;
+}
+.results .img-proof {
+  padding: 3px;
+  font-size: 15px;
+  background-color: transparent;
+  color: rgba(0, 0, 0, 0.8);
+  text-align: left;
+  position: relative;
+}
+.results .flex_link {
+  align-items: stretch;
+  justify-content: center;
+}
+.results .txt {
+  flex-direction: column;
+  padding: 0;
+}
+.txt .teaser {
+  flex: 1;
+}
+.txt .control_wrap {
+}
+
+/* Detailview */
+.joDetail {
+
+  /*
+  margin: 0 -15px;
+  */
+}
+.joDetail .img-placeholder-wrap {
+  align-items: center;
+  justify-content: center;
+}
+.joDetail .img-placeholder {
+  width: initial;
+  height: auto;
+  max-width: 50%;
+  max-height: 50%;
+}
+
+/*
+.joDetail .item_info_wrap {
+padding: 5px 15px 5px 30px;
+font-size: 17px;
+}
+*/
+.joDetail .detailtext {
+  border-left: #cecece 1px solid;
+  background-color: #F5F5F5;
+  min-height: 100%;
+  z-index: 10;
+}
+.joDetail h2.detail-title {
+  font-size: 20px;
+  margin: 0;
+}
+.joDetail h2.detail-title {
+  border-bottom: 1px solid #cecece;
+}
+.joDetail .detailtext h3,
+.joDetail h2.detail-title,
+.joDetail .joCategoryWrapper {
+  padding: 15px 30px;
+}
+.joDetail h2.detail-title {
+  padding: 15px 63px 15px 30px;
+}
+.joDetail .joCategory,
+.joDetail .joCategoryContent {
+  padding: 0;
+}
+.joDetail .detailtext h3 {
+  position: relative;
+  background-color: #DBD7D2;
+  color: #000000;
+  font-size: 18px;
+  border-bottom: #cecece 1px solid;
+  border-top: #cecece 1px solid;
+  margin: 0;
+  padding: 15px 20px 15px 50px;
+}
+
+/* Detailansicht */
+
+/* Sidebar
+body #content,
+body #sidebar {
+transition: all 0.3s;
+} 
+*/
+body #sidebar {
+  flex-direction: column;
+}
+body #sidebar .sidebar_wrap {
+  flex: 1;
+}
+body #sidebar.active {
+  margin-right: -33.4%;
+}
+body .wrapper {
+
+  /* align-items: flex-start; */
+  background-color: #ffffff;
+}
+div.joDetail .bigimg_wrap img {
+
+  /*
+  max-height: 100%;
+  max-width: 100%;
+  */
+  background-color: transparent;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  left: 0;    /* object-position: 0 100%; */
+}
+.detailtext h3[data-toggle="collapse"][aria-expanded="true"]:before {
+  transform: rotate(90deg);
+}
+.detailtext h3[data-toggle="collapse"]:before {
+  content: '';
+  position: absolute;
+  top: calc(50% - 7.5px);
+  left: 30px;
+  display: block;
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+  background-image: url(/typo3conf/ext/jo_museo/Resources/Public/Images/sprite_portal_black.svg);
+  background-color: transparent;
+  background-size: 300px;
+  background-repeat: no-repeat;
+  background-position: -195px -16px;
+  transform: rotate(0deg);
+  transition: transform .5s ease;
+}
+
+/* Objektansicht */
+.objects {
+  border-top: 1px transparent solid;
+  border-right: 1px transparent solid;
+}
+.square {
+  padding-bottom: 16.67%;
+}
+.objects .info_wrap,
+.objects a {
+  padding: 10px;
+}
+.objects .img {
+  background-position: 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.objects .info_wrap {
+  color: #ffffff;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  text-align: left;
+}
+.objects .info_wrap,
+.objects .textcanvas {
+  transition: all 550ms ease-out;
+  transform: translateZ(0);
+}
+.objects .textcanvas {
+  opacity: 0;
+  width: 100%;
+}
+.objects .textcanvas .item_info_wrap {
+  padding: 0 15px;
+}
+.objects .textcanvas .item_info_wrap .item_wrap {
+  padding-bottom: 5px;
+  margin-bottom: 0;
+  border-bottom: none;
+  text-align: left;
+}
+.objects .info_wrap:hover .textcanvas {
+  opacity: 1;
+}
+.objects .info_wrap:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+a[href="#timeline"] .joSprite {
+  background-image: url(/typo3conf/ext/jo_museo/Resources/Public/Images/sprite_v1.svg);
+  background-color: transparent;
+  background-size: 480px auto;
+  background-repeat: no-repeat;
+  background-position: -157px -215px;
+}
+li:hover a[href="#timeline"] .joSprite,
+a[href="#timeline"].c_button.active.show .joSprite {
+  background-image: url(/typo3conf/ext/jo_museo/Resources/Public/Images/sprite_v1.svg);
+  background-color: transparent;
+  background-size: 480px auto;
+  background-repeat: no-repeat;
+  background-position: -157px -215px;
+  filter: invert(1);
+}
+a[href="#classificationtime"] .joSprite {
+  background-position: -141px 1px;
+}
+a[href="#classification"] .joSprite {
+  background-position: -759px -190px;
+}
+a[href="#territory"] .joSprite {
+  background-position: -425px -284px;
+}
+a[href="#locationHierarchy"] .joSprite {
+  background-position: -475px -93px;
+}
+a[href="#facette_info"] .joSprite {
+  background-position: -46px -142px;
+}
+#map-list a[href="#facette_info"] .joSprite {
+  background-position: -9.5vw -29.5vw;
+}
+#facette_info {
+  color: white;
+}
+body a.gbv {
+  display: inline-block;
+  vertical-align: middle;
+  color: #000000;
+  padding: 2px 4px;
+  background-color: #d0cfcf;
+  text-decoration: none;
+  line-height: 100%;
+  border: #808080 1px solid;
+  font-size: 12px;
+  border-right: #638bc6 7px solid;
+}
+
+/* map list */
+#map-list .results.container {
+  padding: 0;
+  background-color: #f5f5f5;
+  border-top: 1px solid black;
+}
+#map-list .container.joControls-container {
+  padding: 0;
+}
+#map-list .search_wrap > .container {
+  padding: 0 15px;
+}
+#map-list .facettes.container {
+  padding: 0;
+}
+#map-list .joScrollWrap .joListText,
+#map-list .joScrollWrap .joListLinks {
+  width: 100%;
+  max-width: 100%;
+  flex: 0 0 100%;
+}
+#map-list .joScrollWrap .joListText {
+  padding: 10px;
+}
+#map-list .joScrollWrap .list_notable .map-item-header {
+  padding: 15px;
+}
+#joMaps-container {
+  height: calc(100vh - 168.5px);
+}
+#joMaps-container .map-item-header-title {
+  width: 100%;
+  cursor: pointer;
+  padding: 0;
+}
+#joMaps-container .map-item-header-title h2 {
+  padding: 0;
+}
+#map-list .title_or_symbols {
+  padding-bottom: 15px;
+}
+#map-list .title_or_symbols .control_button {
+  float: left;
+  margin-right: 5px;
+}
+#map-list .title_or_symbols .control_button span {
+  display: none;
+}
+#map-list .title_or_symbols .control_button a .addGradient {
+  margin-right: 4px;
+}
+#map-list .control_button .inactive_link .addGradient {
+  margin-right: 4px;
+}
+#map-list .joScrollWrap {
+  overflow-y: auto;
+  height: 100%;
+  position: relative;
+  width: 100%;
+  background-color: #f5f5f5;
+  z-index: 15;
+}
+#map-list {
+  height: 100%;
+}
+#ol4-mapdiv {
+
+  /* height: calc(100vh - 90px); */
+  height: 100%;
+}
+#map-list .facettes .tab-pane h3,
+#map-list .facettes .tab-pane > .clearfix,
+#map-list .facettes .tab-pane .index_wrapper {
+
+  /* padding: 0 15px; */
+  padding: 0;
+}
+#map-list .facettes .tab-pane .index_wrapper {
+  margin: 0;
+}
+.list_notable .joResponseImage {
+  border: none;
+}
+.joFacettedSearch div#territory {
+  background-image: url(/typo3conf/ext/jo_museo/Resources/Public/Images/sprite_portal_white.svg);
+  background-position: -433px -288px;
+}
+.joFacettedSearch div#locationHierarchy {
+  background-image: url(/typo3conf/ext/jo_museo/Resources/Public/Images/sprite_portal_white.svg);
+  background-position: -482px -99px;
+}
+.joFacettedSearch div#classification {
+  background-image: url(/typo3conf/ext/jo_museo/Resources/Public/Images/sprite_portal_white.svg);
+  background-position: -766px -194px;
+}
+.joFacettedSearch div#classificationtime {
+  background-image: url(/typo3conf/ext/jo_museo/Resources/Public/Images/sprite_portal_white.svg);
+  background-position: -148px -4px;
+}
+.joFacettedSearch div#timeline {
+  background-image: url(/typo3conf/ext/jo_museo/Resources/Public/Images/sprite_v1.svg);
+  background-size: 400px auto;
+  background-position: -182px -177px;
+}
+.locatePoint {
+  display: flex;
+}
+.locatePoint > span {
+  display: flex;
+}
+.locatePoint .joSprite {
+  background-position: -668px -99px;
+  height: 40px;
+}
+#map-list .locatePoint .addGradient,
+#map-list .detail .addGradient,
+#map-list .viewer .addGradient,
+#map-list .control_button .inactive_link .addGradient {
+  height: 40px;
+}
+#map-list .results .detail .addGradient .joSprite {
+  background-position: -73px -75px;
+}
+#map-list .results .viewer .addGradient .joSprite {
+  background-size: 800px;
+  background-position: 1px 0px;
+}
+#map-list .localize {
+  display: block;
+}
+.list-view .grid-img.pl,
+.joGridview .grid-img.pl {
+  background-size: 45%;
+  padding: 20% 0;
+}
+.localize {
+  display: none;
+}
+.viewer {
+  display: none;
+}
+.external_link .external_icon .joSprite {
+  background-image: url(/typo3conf/ext/jo_museo/Resources/Public/Images/sprite_portal_white.svg);
+  background-position: -335px -35px;
+  background-size: 600px;
+  transform: rotate(-45deg);
+}
+.ol-viewport .joLayerContainer {
+  left: 0;
+}
+.ol-viewport .boundingbox_button {
+  left: 50%;
+  transform: translateX(-50%);
+  top: unset;
+  bottom: 0;
+}
+.ol-viewport .boundingbox_button .joModeToggle {
+  width: auto;
+  height: auto;
+  padding: 11px 15px;
+  font-size: 18px;
+  font-weight: 300;
+}
+.img_big.active .col-md .img_caption {
+  opacity: 0;
+  visibility: hidden;
+}
+.img_big .col-md img {
+  object-position: center;
+  transition: object-position .5s ease;
+}
+.img_big.active .col-md img {
+  object-position: bottom;
+}
+.img_big.active .col-md-10 img {
+  object-position: center;
+}
+.img_caption span[data-toggle="collapse-next"] {
+  background-image: url(/typo3conf/ext/jo_museo/Resources/Public/Images/sprite_portal_black.svg);
+  background-position: -38px -108px;
+  background-size: 700px;
+  font-size: 0;
+  width: 30px;
+  height: 30px;
+  display: block;
+  cursor: pointer;
+}
+div#map-jo-icon {
+  background-image: url(/typo3conf/ext/jo_museo/Resources/Public/Images/sprite_portal_white.svg);
+  width: 40px;
+  height: 40px;
+  background-size: 800px;
+  background-repeat: no-repeat;
+  position: fixed;
+  bottom: 15px;
+  left: calc(100% - 55px);
+  background-color: rgba(0, 0, 0, 1);
+  padding: 2px;
+  z-index: 150;
+  -moz-transition: left 0.3s;
+  -webkit-transition: left 0.3s;
+  transition: left 0.3s;
+}
+div#map-jo-icon {
+  background-position: -81px -1px;
+}
+.active div#map-jo-icon {
+  background-position: -41px -42px;
+}
+.show div#map-jo-icon {
+  left: 5px;
+}
+#joInfo-container {
+  padding: 15px;
+  border: none;
+}
+#joInfo-container .list_notable .control_button a {
+  flex-direction: row;
+}
+.joSwitch-container {
+  display: none;
+}
+#joInfo-container .joResponseImage {
+  padding: 50%;
+}
+#joInfo-container .results {
+  padding: 0;
+}
+#joInfo-container .results .list_notable {
+  flex-direction: column-reverse;
+}
+.page-link {
+  background-color: transparent;
+}
+.col-md-4 .alt_view .joControls {
+  margin-left: 15px;
+}
+#map-list.col-md-4 .alt_view .joControls {
+
+  /*
+  border-top: 1px solid black;
+  display: block;
+  width: 100%;
+  */
+  margin-left: 0;
+  padding-right: 0;
+  background-color: #dcded6;
+}
+#map-list .alt_view .joControls li a.c_button {
+  border-right: 1px solid black;
+  margin: 0;
+}
+#map-list .alt_view .joControls li:last-child a.c_button {
+
+  /*
+  border-right: none;
+  */
+}
+.item_info_liststyle ul li {
+  list-style-type: none;
+  margin-left: -25px;
+}
+.footer a,
+.footer a:hover {
+  color: #000000;
+}
+.map-slide-box {
+  height: 100%;
+  width: 100%;
+  word-break: break-word;
+  hyphens: auto;
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateX(0%);
+  background-color: white;
+  z-index: 10;
+  transition: visibility 0.5s ease, transform 0.5s ease;
+  padding-top: 40px;
+}
+.map-slide-box.active {
+  visibility: visible;
+  transform: translateX(calc(-100% - 1px));
+  transition: visibility 0.5s ease, transform 0.5s ease;
+}
+.map-slide-item {
+  display: none;  /*
+  visibility: hidden;
+  transition: visibility 0.5s ease, transform 0.5s ease;
+  */
+  overflow: auto;
+  height: 100%;
+  font-size: 1.8rem;
+}
+.map-slide-item.active {
+  display: block;  /* visibility: visible; */
+}
+.map-slide-item .close {
+  font-size: 40px;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #8E0201;
+  color: white;
+  line-height: 40px;
+  opacity: 1;
+  outline: none;
+  z-index: 20;
+  background-image: url(/typo3conf/ext/jo_museo/Resources/Public/Images/sprite_portal_white.svg);
+  background-size: 750px;
+  background-position: -448px 2px;
+}
+.map-slide-item .close > span {
+  display: none;
+}
+.map-slide-item #jo_popup_carousel .carousel-item {
+  display: block;
+  border-bottom: rgba(0, 0, 0, 0.3) 1px solid;
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+}
+.map-slide-item #jo_popup_carousel .carousel-item:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+.map-slide-item .grid-img {
+  border: 1px solid black;
+  margin-left: 0;
+  margin-right: 0;
+}
+.map-slide-item .control_wrap {
+  display: flex;
+  justify-content: space-between;
+}
+.map-slide-item .control_wrap > div {
+  margin-right: 5px;
+}
+.map-slide-item .control_wrap > div:last-child {
+  margin-right: 0px;
+}
+.map-slide-box .title_or_symbols h2 {
+  padding: 5px 0 15px;
+  font-size: 20px;
+}
+.map-slide-box .title_or_symbols h2 a {
+  font-weight: 600;
+}
+.map-slide-box .joListText > .clearfix.row {
+  font-size: 17px;
+}
+#map-list .map-slide-box .list_notable .img,
+#map-list .map-slide-box .list_notable .txt,
+#map-list .map-slide-box .list_notable .joTime-container {
+  display: block;
+}
+#map-list .map-slide-box .list_notable .txt {
+  padding-left: 0;
+  padding-right: 0;
+  margin: 0;
+}
+#map-list .map-slide-box .list_notable .img {
+  padding: 0;
+}
+#map-list .map-slide-box .title_or_symbols > .clearfix {
+  display: none;
+}
+.map-slide-box .results {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+#map-list .map-slide-box .list_notable {
+  border-bottom: none;
+}
+#map-list .map-slide-box .img,
+#map-list .map-slide-box .txt,
+#map-list .map-slide-box .txt > div {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+.map-loaded .list_notable {
+  flex-direction: column-reverse;
+}
+.map-slide-item {
+  padding: 0 15px;
+}
+#map-list .facettes {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+#map-list .label {
+  font-weight: 600;
+}
+.main_content h1.joNothingFound {
+  padding-left: 15px;
+  padding-right: 15px;
+  text-align: center;
+}
+.nothing {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+div.locationTokenizedExpert,
+div.location {
+  background-image: url(/typo3conf/ext/jo_museo/Resources/Public/Images/sprite_portal_white.svg);
+  background-position: -102.2px -4px;
+}
+div.entityTokenizedExpert,
+div.entitynorole,
+div.publisher {
+  background-image: url(/typo3conf/ext/jo_museo/Resources/Public/Images/sprite_portal_white.svg);
+  background-position: -386px -50px;
+}
+#map-list .alt_view .joControls li a.c_button {
+
+  /*
+  width: 11.111%;
+  height: 3.4393vw;
+  height: auto;
+  padding-bottom: 11.11%;
+  */
+}
+#map-list .alt_view .joControls li a.c_button .joSprite {
+  background-size: 200vw;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+#map-list .c_button #joDeleteIcon .joSprite {
+  background-position: -120vw 0vw;
+}
+#map-list a.c_button[href="#searchparams"] .joSprite {
+  background-position: -190.2vw -20vw;
+}
+#map-list a.c_button[href="#locationHierarchy"] .joSprite {
+  background-position: -100vw -20vw;
+}
+#map-list a.c_button[href="#classificationtime"] .joSprite {
+  background-position: -30vw 0vw;
+}
+#map-list a.c_button[href="#classification"] .joSprite {
+  background-position: -160vw -40vw;
+}
+#map-list a.c_button[href="#territory"] .joSprite {
+  background-position: -89.5vw -60vw;
+}
+#map-list a.c_button[href="#locationFirstletter"] .joSprite {
+  background-position: -20vw 0vw;
+}
+#map-list a.c_button[href="#objectTypeHierarchy"] .joSprite,
+#map-list a.c_button[href="#objectType"] .joSprite {
+  background-position: -189.5vw 0vw;
+}
+#map-list .alt_view .joControls li a.c_button[href="#timeline"] .joSprite {
+  background-size: 90vw auto;
+  background-position: -28.5vw -39.5vw;
+}
+.frame-type-list div.joSlideableYearContainer {
+  width: unset;
+  left: -1.1rem;
+}
+.frame-type-list div.joSlideableYearContainer .content {
+  font-size: 18px;
+  line-height: unset;
+  position: relative;
+  z-index: 2;
+  padding: 5px;
+  background-color: #8E0201;
+}
+.frame-type-list div.joSlideableYearContainer .ecke,
+.frame-type-list div.joSlideableYearContainer .content {
+  background-color: #8E0201;
+}
+.statusitem {
+  display: inline-block;
+  padding: 7px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+.statuscolor_red {
+  background-color: red;
+}
+.statuscolor_green {
+  background-color: green;
+}
+.statuscolor_yellow {
+  background-color: yellow;
+}
+.found-info {
+  font-size: 20px;
+  font-weight: 600;
+}
+.map-slide-item #jo_popup_carousel .carousel-item.found-info {
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+#bound-closer {
+  display: none;
+  cursor: pointer;
+  font-size: 40px;
+  width: 40px;
+  height: 40px;
+  background-color: black;
+  color: white;
+  line-height: 40px;
+  opacity: 1;
+  outline: none;
+  z-index: 20;
+  background-image: url(/typo3conf/ext/jo_museo/Resources/Public/Images/sprite_portal_white.svg);
+  background-size: 750px;
+  background-position: -449px 1px;
+  margin: -2px 0 0px 1px;
+}
+.joEntityFactsContainer .joContent-container .row .col-12 {
+  padding-left: 0;
+}
+#ol4-mapdiv .ol-control button:focus,
+#ol4-mapdiv .ol-control button:hover,
+#map-container .ol-control button:focus,
+#map-container .ol-control button:hover {
+  background-color: #8E0201;
+}
+#ol4-mapdiv .ol-attribution ul {
+  font-size: 17px;
+  float: right;
+  line-height: 42px;
+}
+#map-list .joSliderShow-next,
+#map-list .joSliderShow-prev {
+  background-color: rgba(255, 255, 255, 0.3);
+  z-index: 30;
+}
+#map-list .joTimeLineAndFilter {
+  margin: 0;
+}
+.toggle_search_filter_outerwrap {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+#map-list .toggle_search_filter_outerwrap {
+  margin: 15px 0 0;
+}
+.controls_wrap {
+  padding-right: 0;
+  padding-left: 0;
+}
+.facettes {
+}
+.search_masks {
+  flex-direction: column-reverse;
+}
+
+/*
+.searchform,
+div.joDetail div.detailimage {
+flex-basis: unset;
+}
+*/
+#sidebarCollapse,
+.togglefullscreen {
+  display: none !important;
+}
+#joMaps-container {
+
+  /*
+  margin: 0 -15px;
+  */
+}
+
+/*
+.detailimage_con:after {
+content: '';
+display: block;
+position: absolute;
+right: 20px;
+bottom: 20px;
+width: 50px;
+height: 50px;
+background-image: url(/typo3conf/ext/jo_museo/Resources/Public/Images/sprite_portal_black.svg);
+background-color: transparent;
+background-size: 1100px;
+background-repeat: no-repeat;
+background-position: -717px -60px;
+animation: tohide 2s ease 6;
+opacity: 0;
+transform: translateY(0) rotate(90deg);
+}
+@keyframes tohide {
+0% {
+opacity: 1;
+transform: translateY(-50%) rotate(90deg);
+}
+100% {
+opacity: 0;
+transform: translateY(0%) rotate(90deg);
+}
+}
+*/
+.exhibition.showall .h2 {
+  padding-left: 20%;
+  padding-right: 20%;
+  font-size: 32px;
+  font-weight: 600;
+  margin-top: 80px;
+}
+.cropafter {
+  display: -webkit-box;
+  max-width: 100%;
+  margin: 0 auto;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.lines_2 {
+  -webkit-line-clamp: 2;
+}
+.lines_3 {
+  -webkit-line-clamp: 3;
+}
+.feedback-submit {
+  background-color: #383838;
+  border: none;
+  border-radius: 0;
+  padding: 15px;
+}
+.feedback-submit:hover {
+  background-color: #383838;
+}
+.alt_view .joControls li a.c_button[href="#facette_info"],
+.alt_view .joControls li.deletefilter a.c_button {
+  padding-right: 0;
+  margin-right: 10px;
+}
+.joFacettedSearch {
+  border-right: #fff 1px solid;
+  color: white;
+}
+.joAndOrSwitch .joAndText {
+  left: 8px;
+  top: -1px;
+}
+.joAndOrSwitch .joOrText {
+  right: 5px;
+  top: -1px;
+}
+.joAndOrSwitch {
+  width: 70px;
+}
+.joAndOrSwitch input.joAndOrCheck:checked ~ .slider:before {
+  -webkit-transform: translateX(43px);
+  -ms-transform: translateX(43px);
+  transform: translateX(43px);
+}
+.colbox_export .list_notable .img {
+  padding-right: 10px;
+}
+.list_view_3_wrap {
+  position: relative;
+}
+.joObjekteTimelineEndJahr span,
+.joObjekteTimelineStartJahr span {
+  color: black;
+}
+.joListNotableContainer .list_notable .img {
+  padding-right: 15px;
+}
+.joListNotableContainer .grid-img {
+  padding-bottom: 0;
+}
+.joListNotableContainer .control_wrap {
+  margin-top: 15px;
+}
+.upperFeedback a {
+  display: block;
+  color: #e51008;
+}
+.feedback_wrap {
+  margin-top: -20px;
+}
+.search-select-wrap {
+  width: 200px;
+  padding-right: 10px;
+}
+.search-select {
+  width: 100%;
+  height: 100%;
+  font-size: 22px;
+  background-color: rgb(255 255 255 / 50%);
+  border-color: rgb(255 255 255 / 50%);
+  border-radius: 0;
+  box-shadow: 0px 0px 10px rgb(0 0 0 / 60%);
+  padding-left: 15px;
+}
+.search-select:focus {
+  outline: none;
+  background-color: rgb(255 255 255 / 50%);
+  border-color: rgb(255 255 255 / 50%);
+  box-shadow: none;
+}
+.entrymask #joSearch {
+  box-shadow: none;
+  border-radius: 0;
+}
+.bx-shd-wrap {
+  box-shadow: 0px 0px 10px rgb(0 0 0 / 60%);
+  display: flex;
+  width: 100%;
+  border-radius: 0;
+}
+.joRisContainer {
+  display: inline;
+  vertical-align: middle;
+}
+.joRisKopy {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 5px;
+}
+.entrymask .searchform .search_box {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.img-info-icon {
+  width: 20px;
+  height: 20px;
+}
+.found_block .found_wrap {
+  display: none;
+}
+.sort_view_dropdown {
+  z-index: 99999;
+}
+.item_sorting_con.asc_sorting .dropdown-toggle:after {
+  transform: rotate(-90deg);
+}
+.item_sorting_con.desc_sorting .dropdown-toggle:after {
+}
+.item_sorting_con.asc_score .dropdown-toggle:after {
+  transform: rotate(-90deg);
+}
+.item_sorting_con.desc_score .dropdown-toggle:after {
+}
+.item_sorting_con.desc_titleSort .dropdown-toggle:after {
+}
+.item_sorting_con.asc_titleSort .dropdown-toggle:after {
+  transform: rotate(-90deg);
+}
+.item_sorting_con.desc_startdate .dropdown-toggle:after {
+}
+.item_sorting_con.asc_startdate .dropdown-toggle:after {
+  transform: rotate(-90deg);
+}
+div.joPageTimeline {
+  padding: 0 0 0 20px;
+}
+#map-list div.joPageTimeline {
+  padding: 0;
+}
+.imageSwitch .image_only_label {
+  font-size: 14px;
+}
+.rightcol #collapse-3-1 .item_wrap {
+  margin-bottom: 5px;
+}
+#map-list .joListNotableContainer .list_notable {
+  margin-top: 0;
+  padding: 0;
+}
+#map-list .joListNotableContainer .list_notable h2 {
+  margin-bottom: 0;
+}
+#map-list .search_mask_outer_wrap > div {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+#map-list .alternativeview_1 .joTimeLineAndFilter {
+  border-top: 1px solid black;
+  padding-right: 0;
+  padding-left: 0;
+}
+#map-list .colbox_text,
+#map-list .facettes,
+#map-list .alternativeview_1 .search_mask_outer_wrap,
+#map-list .results {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+#map-list .alternativeview_1 .search_mask_outer_wrap {
+  order: 1;
+}
+#map-list .sort_and_view_wrap {
+  order: 2;
+  padding: 5px 15px;
+  background-color: #dcded6;
+}
+#map-list .filter_wrap {
+  order: 3;
+}
+#map-list .alternativeview_1 {
+  display: flex;
+  flex-direction: column;
+}
+#map-list .sort_block {
+  margin-left: auto;
+  padding-right: 8px;
+}
+#joMaps-container .ol-attribution {
+  padding: 0;
+}
+#map-list .list-view .grid-img {
+  background-size: cover;
+  background-position: center;
+}
+div.collbox-link-container > a,
+div.collbox-link-container > a:hover {
+  color: white;
+}
+.colbox_export .results {
+  background-color: #dcded6;
+}
+.collbox-link-container .sprite_mask,
+.results_colbox .addGradient {
+  display: none;
+}
+div.ol-popup {
+  padding: 8px 15px;
+  min-width: unset;
+  top: -30px;
+}
+.download_link:after {
+  content: none !important;
+}
+.download_link:before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  background-image: url(/typo3conf/ext/jo_museo/Resources/Public/Images/sprite_portal_black.svg);
+  background-color: transparent;
+  background-size: 500px;
+  background-repeat: no-repeat;
+  background-position: -3px -30px;
+}
+#downloadModal .modal-content {
+  border: 15px solid #dcded6;
+  border-radius: 0;
+  padding: 10px;
+}
+#downloadModal h2 {
+  margin-top: 0;
+  font-size: 22px;
+  font-weight: 600;
+}
+#downloadModal .modal-dialog {
+  max-width: 60vw;
+}
+#downloadModal .modal-header {
+  padding: 5px 10px;
+  border-bottom: 0;
+}
+#downloadModal .modal-body {
+  padding-top: 0;
+}
+#downloadModal .close {
+  opacity: 1;
+}
+#downloadModal .close span {
+  color: #B74C2E;
+  font-weight: 600;
+  font-size: 30px;
+}
+#downloadModal .link-wrap {
+  display: flex;
+  flex-direction: column;
+}
+#downloadModal hr {
+  border-top: 1px solid black;
+}
+.download-btn {
+  font-size: 18px;
+  font-weight: 600;
+  background-color: #383838;
+  color: white;
+  border: 0;
+  padding: 10px 25px;
+}
+.download-column {
+
+  /*
+  display: none;
+  */
+}
+.download-license-btn,
+.dwn-meta-link {
+  font-size: 12px;
+  background-color: #272726;
+  color: white;
+  padding: 5px 5px;
+  border-radius: 2px;
+  margin-right: 10px;
+}
+.download-license-btn:hover,
+.dwn-meta-link:hover {
+  color: white;
+}
+.download-img-block {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+}
+.download-img-block:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 15px;
+  width: calc(100% - 30px);
+  height: 1px;
+  background-color: black;
+}
+.download-img-block:nth-last-child(2):after,.download-img-block:last-child:after {
+  content: none;
+}
+.download-img-block label {
+  font-weight: 600;
+  margin-bottom: 0;
+}
+.download-file-wrap,
+.download-img-it {
+  margin-bottom: 10px;
+}
+.download-file-wrap > div:first-child {
+  padding-right: 7.5px;
+}
+.download-file-wrap > div:last-child {
+  padding-left: 7.5px;
+}
+.download-file-wrap a {
+  margin-top: 0;
+}
+.download-license-btn {
+  display: block;
+  margin-left: auto;
+  margin-right: 0;
+  margin-top: auto;
+}
+.download-license-btn:focus {
+  box-shadow: none;
+}
+.download-rights-wrapper > div:first-child {
+  padding-top: 8px;
+}
+.colbox-header {
+  flex-direction: column;
+}
+.colbox-header > h2 {
+  margin-bottom: 10px;
+}
+.download-wrapper {
+  text-align: center;
+}
+.download-img-poster img {
+  width: 100%;
+  height: auto;
+}
+.classic_view .content_block_wrap .content_block {
+  background-color: transparent;
+}
+.relations_view_1 ul {
+  list-style: none;
+  display: flex;
+}
+.relations_view_1 h5 {
+  margin-bottom: 0;
+}
+.relations_view_1 h5 span {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  background-color: #272726;
+  color: white;
+  padding: 5px 5px;
+  border-radius: 2px;
+}
+.relations_view_1 .rv1-ul {
+  padding-left: 5%;
+  padding-bottom: 40px;
+}
+.relations_view_1 .rv1-ul > li {
+  position: relative;
+}
+.relations_view_1 .rv1-ul > li:before {
+  content: '';
+  display: block;
+  height: calc(100% - 10px);
+  width: 1px;
+  position: absolute;
+  left: 0;
+  bottom: 7px;
+  background-color: black;
+}
+.relations_view_1 .rv1-ul2 {
+  padding-left: 10px;
+}
+.relations_view_1 .rv1-ul2 > li {
+  display: flex;
+  align-items: center;
+}
+.relations_view_1 li {
+  margin-right: 15px;
+}
+.relations_view_1 li:last-child {
+  margin-right: 0;
+}
+body .relations_view_1 a.detailEntityLink {
+  text-decoration: underline;
+  max-width: unset;
+}
+.rv1-ul-textblock {
+  padding: 30px 20% 60px;
+}
+.rv1-ul-textblock h2 {
+  padding: 40px 0 30px;
+  margin: 0;
+  font-size: 40px;
+  font-weight: 500;
+}
+.tof-wrapper {
+  text-align: center;
+}
+div[data-class="teiTable"] {
+  display: table;
+}
+.teiRow {
+  display: table-row;
+}
+.teiCell {
+  display: table-cell;
+  padding: 1em;
+}
+.sort-direction {
+  display: none;
+}
+@media (min-width:768px) {
+  .results_colbox {
+    margin-top: 50px;
+  }
+  .colbox_text {
+    padding-left: 20%;
+    padding-right: 20%;
+  }
+  .collbox-link-container {
+    margin-right: -24%;
+  }
+  .results_colbox .joListNotableContainer {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-column-gap: 30px;
+    margin-left: -30px;
+  }
+  .results_colbox .joListNotableContainer .list_notable {
+    padding: 15px;
+  }
+  .colbox_export .results {
+    padding-left: 120px;
+    padding-right: 120px;
+  }
+  #sidebarCollapse,
+  .togglefullscreen {
+    display: block !important;
+  }
+  .list-view .grid-img {
+
+    /* padding-bottom: 0; */
+  }
+  .search_type_wrap {
+    margin-top: 0;
+  }
+  .expert .left-side {
+    padding-right: 10px;
+  }
+  .expert .right-side {
+    padding-left: 10px;
+  }
+  .search_masks {
+    flex-direction: row;
+  }
+  #map-list .search_masks {
+    padding: 20px 0 0;
+  }
+  .searchform {
+    flex-basis: 0;
+  }
+  .alt_view.facette_default .controls_wrap,
+  .toggle_search_filter_outerwrap {
+    padding-right: 15%;
+    padding-left: 15%;
+  }
+
+  /*
+  .joGridview .grid-item {
+    padding-bottom: 33.33%;
+  }
+  */
+  #map-list {
+    height: 100%;
+    border-left: 1px solid #000000;
+  }
+  .list_notable {
+    padding: 0 20px;
+    margin: 30px 0 0;
+  }
+  .list_notable .img {
+    padding: 10px;
+  }
+
+  /*
+  .results .txt {
+    padding: 20px 0 20px 30px;
+  }
+
+  .classic_view h2 {
+    color: #383838;
+    font-weight: 500;
+    font-size: 20px;
+  }
+  */
+  #sidebarCollapse {
+    display: none !important;
+  }
+  #map-list .list_notable .col-md-3.img {
+    max-width: 100%;
+    min-width: 100%;
+    margin-top: 0;
+  }
+  #map-list .list_notable .col-md-9.txt {
+    max-width: 100%;
+    min-width: 100%;
+    padding-bottom: 20px;
+    color: #000000;
+    border-bottom: rgba(0, 0, 0, 0.4) 1px dotted;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  #map-list .joScrollWrap .joListText {
+    padding: 0 25px;
+  }
+  #map-list .joSliderShow-next {
+    right: -15px;
+  }
+  #map-list .joSliderShow-prev {
+    left: -15px;
+  }
+  #map-list .alt_view .joControls li a.c_button {
+
+    /*
+    width: 11.111%;
+    height: 3.4393vw;
+    height: auto;
+    padding-bottom: 11.11%;
+    */
+  }
+  #map-list .alt_view .joControls li a.c_button .joSprite {
+    background-size: 65vw;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  #map-list .c_button #joDeleteIcon .joSprite {
+    background-position: -39vw 0.1vw;
+  }
+  #map-list a.c_button[href="#searchparams"] .joSprite {
+    background-position: -61.7vw -6.4vw;
+  }
+  #map-list a.c_button[href="#locationHierarchy"] .joSprite {
+    background-position: -32.4vw -6.3vw;
+  }
+  #map-list a.c_button[href="#classificationtime"] .joSprite {
+    background-position: -9.8vw 0.1vw;
+  }
+  #map-list a.c_button[href="#classification"] .joSprite {
+    background-position: -52vw -12.9vw;
+  }
+  #map-list a.c_button[href="#territory"] .joSprite {
+    background-position: -29.1vw -19.3vw;
+  }
+  #map-list a.c_button[href="#locationFirstletter"] .joSprite {
+    background-position: -6.5vw 0vw;
+  }
+  #map-list a.c_button[href="#objectTypeHierarchy"] .joSprite,
+  #map-list a.c_button[href="#objectType"] .joSprite {
+    background-position: -61.5vw 0vw;
+  }
+  #map-list .alt_view .joControls li a.c_button[href="#timeline"] .joSprite {
+    background-size: 33vw auto;
+    background-position: -10.7vw -14.7vw;
+  }
+  #map-list a.c_button[href="#tenantHierarchy"] .joSprite,
+  #map-list a.c_button[href="#tenant"] .joSprite {
+    background-position: -29.1vw 0.1vw;
+  }
+  #map-list a.c_button[href="#entityFirstletter"] .joSprite {
+    background-position: -25.8vw -3.05vw;
+  }
+  #map-list a.c_button[href="#facette_info"] .joSprite {
+    background-position: -3vw -9.6vw;
+  }
+  #map-list .joScrollWrap {
+    overflow-y: unset;
+  }
+}
+@media (min-width:992px) {
+  .colbox-header {
+    flex-direction: row;
+  }
+  .colbox-header > h2 {
+    margin-bottom: 0;
+  }
+}
+@media (min-width:1300px) {
+}

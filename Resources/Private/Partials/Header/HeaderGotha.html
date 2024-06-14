@@ -1,0 +1,94 @@
+<div class="joTop h-100">
+	<header class="h-100">
+		<div class="first-menu">
+			<f:if condition="{upperMenu}">
+				<ul class="upperMenu">
+					<f:for each="{upperMenu}" as="page">
+						<li>
+							<a href="{page.link}"{f:if(condition: page.target, then: ' target="{page.target}"')} title="{page.title}">
+								<f:if condition="{page.files}">
+									<f:then>
+										<f:variable name="newTitle"><f:if condition="{page.files.0.title}"><f:then>{page.files.0.title}</f:then><f:else>{page.title}</f:else></f:if></f:variable>
+										<f:variable name="newAltTitle"><f:if condition="{page.files.0.alternative}"><f:then>{page.files.0.alternative}</f:then><f:else>{page.title}</f:else></f:if></f:variable>
+										<span>{newTitle}</span>
+										<f:image image="{page.files.0}" alt="{newAltTitle}" title="{newTitle}" />
+									</f:then>
+									<f:else>
+										<span>{page.title}</span>
+									</f:else>
+								</f:if>
+							</a>
+						</li>
+					</f:for>
+				</ul>
+			</f:if>
+			<f:if condition="{language}"><f:format.html parseFuncTSPath="">{language}</f:format.html></f:if>
+		</div>
+		<nav class="navbar h-100 navbar-light navbar-expand-lg">
+			<div class="logo col-9 col-md-9 col-lg-4">
+				<f:if condition="{logo}">
+					<f:format.html parseFuncTSPath="">{logo}</f:format.html>
+				</f:if>
+			</div>
+			<div class="second_control clearfix col-3 col-md-3 d-lg-none">
+				<div class="navbar-toggler-container clearfix">
+					<button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+				</div>
+			</div>
+			<div class="second_control desk clearfix col-12 col-lg-8">
+				<div class="collapse navbar-collapse" id="navbar">
+					<f:if condition="{headline}"><div class="col-12"><h1><f:format.html parseFuncTSPath="">{headline}</f:format.html></h1></div></f:if>
+					<nav class=""><f:cObject typoscriptObjectPath="lib.mainMenu" /></nav>
+					<f:format.raw>{usersession}</f:format.raw>
+					<div class="sideMenuOpener">
+				        <span class="line"></span>
+				        <span class="line"></span>
+				        <span class="line"></span>
+					</div>
+				</div>
+			</div>
+		</nav>
+	</header>
+</div>
+
+<f:if condition="{sideMenu1} || {sideMenu2} || {sideMenu3}">
+	<div class="sideMenu">
+		<h2>Menu</h2>
+		<f:if condition="{sideMenu1}">
+			<ul class="sideMenu1">
+				<f:for each="{sideMenu1}" as="page">
+					<li>
+						<a href="{page.link}"{f:if(condition: page.target, then: ' target="{page.target}"')} title="{page.title}">
+							<span>{page.title}</span>
+						</a>
+					</li>
+				</f:for>
+			</ul>
+		</f:if>
+		<f:if condition="{sideMenu2}">
+			<ul class="sideMenu2">
+				<f:for each="{sideMenu2}" as="page">
+					<li>
+						<a href="{page.link}"{f:if(condition: page.target, then: ' target="{page.target}"')} title="{page.title}">
+							<span>{page.title}</span>
+						</a>
+					</li>
+				</f:for>
+			</ul>
+		</f:if>
+		<f:if condition="{sideMenu3}">
+			<ul class="sideMenu3">
+				<f:for each="{sideMenu3}" as="page">
+					<li>
+						<a href="{page.link}"{f:if(condition: page.target, then: ' target="{page.target}"')} title="{page.title}">
+							<span>{page.title}</span>
+						</a>
+					</li>
+				</f:for>
+			</ul>
+		</f:if>
+		<ul class="cr-list"><li><a class="contrast-regler" href="#"><f:translate key="LLL:EXT:jo_template/Resources/Private/Language/Gothadigital/locallang.xlf:black_white" /><label class="switch"><input class="check" type="checkbox"><span class="slider round"></span></label></a></li></ul>
+	</div>
+</f:if>

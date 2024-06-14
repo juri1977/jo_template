@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="43" height="43" viewBox="0 0 43 43">
+  <g id="Komponente_8_3" data-name="Komponente 8 – 3" transform="translate(3 3)">
+    <g id="Rechteck_799" data-name="Rechteck 799" fill="#383838" stroke="#f4f4f4" stroke-width="3">
+      <rect width="37" height="37" stroke="none"/>
+      <rect x="-1.5" y="-1.5" width="40" height="40" fill="none"/>
+    </g>
+    <path id="Icon_awesome-arrow-right" data-name="Icon awesome-arrow-right" d="M6.378.941,7.121.227a.824.824,0,0,1,1.135,0l6.508,6.248a.747.747,0,0,1,0,1.09L8.256,13.816a.824.824,0,0,1-1.135,0L6.378,13.1A.751.751,0,0,1,6.391,12l4.034-3.692H.8A.786.786,0,0,1,0,7.536V6.507a.786.786,0,0,1,.8-.772h9.622L6.391,2.044A.746.746,0,0,1,6.378.941Z" transform="translate(25.521 11) rotate(90)" fill="#f4f4f4"/>
+  </g>
+</svg>

@@ -1,0 +1,49 @@
+<f:variable name="headerContaienerClass">container-fluid</f:variable>
+<f:variable name="contentContaienerClass">container-fluid</f:variable>
+<f:variable name="footerContaienerClass">container-fluid</f:variable>
+<div class="joOuterDiv vorschau layout-{data.layout} d-flex flex-column {extraClass}{f:if(condition: '{detail}', then: ' detail-view', else: '')}">
+	<a id="skippy" class="skippy visually-hidden-focusable overflow-hidden sr-only sr-only-focusable" href="#content">
+  		<div class="container">
+    		<span class="skiplink-text">Zum Hauptinhalt</span>
+  		</div>
+    </a>
+	<f:render partial="PrintHint" arguments="{_all}" />
+	<f:if condition="!{disableContent}">
+		<main id="maincontent">
+            <div class="joMainWrapper">
+                <f:format.html parseFuncTSPath="">{mainContent}</f:format.html>
+            </div>
+
+			<div class="joMainWrapper {contentContaienerClass}">
+				<f:format.html parseFuncTSPath="">{mainTopContent}</f:format.html>
+			</div>
+
+            <f:if condition="{bannercontent}">
+                <div class="joBannerWrapper">
+                    <f:format.html parseFuncTSPath="">{bannercontent}</f:format.html>
+                </div>
+            </f:if>
+
+			<div id="mobile-hidden" class="d-none d-sm-none d-md-block"></div>
+			
+			<f:render partial="Cookie" arguments="{_all}" />
+
+			<div id="joAjaxloader" style="display: none;">
+			    <div class="joLoader"></div>
+			</div>
+
+			<a href="/" class="back-to-top">
+				<div class="vp">
+					<div class="joSprite" title="Scroll to Top"></div>
+				</div>
+			</a>
+		</main>
+	</f:if>
+	<div class="footer-outer">
+		<footer id="stck-ftr" class="footer">
+			<div class="footer-wrap pt-5">
+				<f:cObject typoscriptObjectPath="lib.footerContent" />
+			</div>
+		</footer>
+	</div>
+</div>

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2015-01-21T16:48:33Z" product-name="jo_template">
+		<header/>
+		<body>
+            <trans-unit id="black_white">
+                <source>black/white view</source>
+                <target>schwarz/weiss Ansicht</target>
+            </trans-unit>
+            <trans-unit id="c11.topicdb">
+				<source>Project type:</source>
+				<target>Projekttyp:</target>
+			</trans-unit>
+			<trans-unit id="c11.keywords">
+				<source>Topic:</source>
+				<target>Thema:</target>
+			</trans-unit>
+			<trans-unit id="c11.times">
+				<source>Time period:</source>
+				<target>Zeitraum:</target>
+			</trans-unit>
+			<trans-unit id="c11.classfication">
+				<source>Institution:</source>
+				<target>Institution:</target>
+			</trans-unit>
+            <trans-unit id="jo_bkr_base.Fund">
+                <source>Origin:</source>
+                <target>Herkunft:</target>
+            </trans-unit>
+			<trans-unit id="jo_bkr_base.breadcrumbs.locationFirstletter">
+                <source>Place:</source>
+                <target>Ort:</target>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.breadcrumbs.label_locationFirstletter">
+                <source>Place</source>
+                <target>Ort</target>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.breadcrumbs.location">
+                <source>Place:</source>
+                <target>Ort:</target>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.objectType">
+                <source>Object category:</source>
+                <target>Objektkategorie:</target>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.breadcrumbs.label_objectType">
+                <source>Object category</source>
+                <target>Objektkategorie</target>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.breadcrumbs.objectType">
+                <source>Object category:</source>
+                <target>Objektkategorie:</target>
+            </trans-unit>
+            <trans-unit id="flash.objectType">
+                <source>Object category</source>
+                <target>Objektkategorie</target>
+            </trans-unit>
+            <trans-unit id="search_objectType">
+                <source>according to the following object categories:</source>
+                <target>nach den folgenden Objektkategorien:</target>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.showtime">
+                <source>Date:</source>
+                <target>Entstehungszeit:</target>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.note">
+                <source>Description:</source>
+                <target>Beschreibung:</target>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.classificationtags">
+                <source>Keyword:</source>
+                <target>Schlagwort:</target>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.breadcrumbs.classificationtags">
+                <source>Keyword:</source>
+                <target>Schlagwort:</target>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.breadcrumbs.classificationtagsFirstletter">
+                <source>Keyword:</source>
+                <target>Schlagwort:</target>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.contextorig">
+                <source>Delivered via:</source>
+                <target>Geliefert über:</target>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.umfang">
+                <source>Size, illustration, format:</source>
+                <target>Umfang, Illustration, Format:</target>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.parent">
+                <source>Included in:</source>
+                <target>Enthalten in:</target>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.classProject">
+                <source>Project:</source>
+                <target>Projekt:</target>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.pat">
+                <source>Funding:</source>
+                <target>Förderung:</target>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.patron">
+                <source>Funding:</source>
+                <target>Förderung:</target>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.zugriff.und.nutzung">
+                <source>Access and usage options</source>
+                <target>Zugriff und Nutzungsmöglichkeiten</target>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.kontakt.info">
+                <source>Contact</source>
+                <target>Kontaktinformationen</target>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.admin.details">
+                <source>Administrative details</source>
+                <target>Administrative Angaben</target>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.moreobject.info">
+                <source>Additional information</source>
+                <target>Weitere Objektinformationen</target>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.biblio.info">
+                <source>Bibliography (selection)</source>
+                <target>Bibliographie (in Auswahl)</target>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.licence">
+                <source>License metadata:</source>
+                <target>Lizenz Metadaten:</target>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.objectdimension">
+                <source>Dimensions:</source>
+                <target>Abmessungen:</target>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.Gotha Imdas DAM_inventarnummer">
+                <source>Inventory number:</source>
+                <target>Inventarnummer:</target>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.Gotha Kalliope_inventarnummer">
+                <source>Shelfmark:</source>
+                <target>Signatur:</target>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.inventarnummer">
+                <source>Shelfmark:</source>
+                <target>Signatur:</target>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.shelfmark">
+                <source>Shelfmark:</source>
+                <target>Signatur:</target>
+            </trans-unit>
+            <trans-unit id="jo_bkr_base.oldinventarnummer">
+                <source>Further object number:</source>
+                <target>weitere Objektnummer:</target>
+            </trans-unit>
+            <trans-unit id="feedback.text.text">
+                <source>Our data sets are in constant development. If you have additional information about this object or discovered an error, please write to us.</source>
+                <target>Unsere Datensätze befinden sich in stetiger Weiterentwicklung. Wenn Sie zusätzliche Informationen zu diesem Objekt oder einen Fehler entdeckt haben, dann schreiben Sie uns.</target>
+            </trans-unit>
+		</body>
+	</file>
+</xliff>

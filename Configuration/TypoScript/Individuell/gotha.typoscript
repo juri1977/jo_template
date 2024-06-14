@@ -1,0 +1,2102 @@
+// Caching für das Projekt
+config {
+    compressCss = 0
+    concatenateCss = 0
+    compressJs = 0
+    concatenateJs = 0
+    no_cache = 0
+    index_enable = 1
+}
+
+plugin.tx_indexedsearch {
+  settings {
+    displayRules = 0
+    displayAdvancedSearchLink = 0
+    displayResultNumber = 5
+  }
+  view {
+    partialRootPaths {
+      100 = EXT:jo_template/Resources/Private/Extensions/gotha/indexed_search/Partials/
+    }
+  }
+}
+
+plugin.tx_femanager.settings {
+  new {
+    validation {
+      terms {
+        required = 1
+      }
+    }
+  }
+}
+
+
+// Konfiguration der Museoextension
+plugin.tx_jomuseo {
+  features {
+    requireCHashArgumentForActionArguments = 0
+  }
+  settings {
+    langPath = EXT:jo_template/Resources/Private/Language/Gothadigital/locallang.xlf
+    merkliste = 27
+    merklistelabel = Merkliste
+    xsl {
+      download = 1
+    }
+    pdf {
+      download = 1
+    }
+    warenkorb{
+      # Soll der Warenkorb/Merkliste gespeichert werden - auskommentieren, wenn nicht gewünscht
+      persistence = 1
+      # ID des persistenten Warenkorbes/Merkliste
+      persistenceid = 184
+      # Projektname des Warenkorbes
+      projectname = gothaportal
+    }
+    init{
+      authdata{
+        token = false
+        server = {$solr.core}
+        servertype = solr
+        idfield = id
+        login = 
+        password = 
+      }
+      specific{
+        projectname = gothaportal
+      }
+      baserequest {
+        paginatepage = 1 
+        offset = 0
+        limit = 50
+        paginatepagecount = 10
+        objecttypes {
+          
+        }
+      }
+      searchconfig{
+        // Wenn dieser Flag gesetzt ist, werden Felder und Aggregate auf deren Existenz geprüft und bereinigt. Das Aussehen der Detailansicht kann so variieren
+        detailcleanemptyfields = 1
+        expertsearch = 0
+        collectorbox = 1
+        detailview = classic
+        // Vorgänger und Nachfolger bei der Detailansicht anzeigen
+        showprevnext = 1
+        # alternative Darstellung der Facetten
+        alternativefacettecontrol = 2
+        # Erweiterung möglich - korrespondiert mit Partial "Facettecontrols.html"
+        // facettecontrol_view = dropdown
+        objectcomment {
+          active = 1
+          email = info@justorange.de
+          emailSendTo = info@justorange.de
+          host = Gotha
+          subject = Anmerkungen zu einem Objekt des Projektes "Gotha-Portal"
+        }
+        showrelatedobjects{
+          connectingfield = classificationTopic
+          sorting {
+            alloptions {
+              sorting {
+                0 = desc
+                1 = asc
+              }
+              titleSort {
+                0 = asc
+                1 = desc
+              }
+            }
+            init {
+              sorting {
+                0 = desc
+                1 = asc
+              }
+              titleSort {
+                0 = asc
+                1 = desc
+              }
+            }
+          }
+        }
+        sorting {
+          # Initial werden die Facetten als Buttons dargestellt alternativ ist die Darstellung als Dropdowns möglich. Dann muss die Variable view gesetzt werden: view = dropdown
+          view = dropdown
+          alloptions {
+            sorting {
+              0 = desc
+              1 = asc
+            }
+            score {
+              0 = desc
+              1 = asc
+            }
+            titleSort {
+              0 = asc
+              1 = desc
+            }
+            startdate {
+              0 = asc
+              1 = desc
+            }
+          }
+          init {
+            sorting {
+              0 = desc
+              1 = asc
+            }
+            titleSort {
+              0 = asc
+              1 = desc
+            }
+          }
+        }
+      }
+    }
+    fieldlist{
+      objecttypefieldconfig{
+        0{
+          fieldname = Drucke_alt
+          main_cols{
+            master{
+              0{
+                name = leftcol
+                colconfigclass = col-md-6
+                fields{
+                  10 {
+                    name = passthrough
+                    hidelabel = true
+                    subtype = imageviewer
+                    type = donotprocessvalue
+                    colconfigclass = transparent
+                  }
+                  90{
+                    name = Karte
+                    type = aggregate
+                    dontshowheadline = true
+                    hideaggregationheader = true 
+                    colconfigclass = col-md-12 transparent
+                    specialaggregationtype = mapblock
+                    dontcollapse = true
+                    show = true
+                    sub{
+                      10 {
+                        name = passthrough
+                        hidelabel = true
+                        subtype = map
+                        type = donotprocessvalue
+                      }
+                    }
+                  }
+                }
+                // Wenn keine Daten in den obenstehenden Feldern vorhanden sind werden alternativ die folgenden Felder aus der nachgelagerten Struktur geladen. Diese werden dann an den ursprünglich angedachten Positionen gelöscht
+                ifempty{
+                  mastercol = 1
+                  // aktuell kann man nur ein Feld einfügen
+                  fieldnumber = 1
+                }
+              }
+              1{
+                name = rightcol
+                colconfigclass = col-md-6
+                 fields{
+                  1{
+                    name = Allgemein
+                    type = aggregate
+                    dontshowheadline = true
+                    hideaggregationheader = true 
+                    colconfigclass = col-md transparent
+                    // erstes element aufgeklappt show = true
+                    show = true
+                    sub{
+                        0 {
+                            name = title
+                            type = singlevalue
+                            hidelabel = true
+                            // headline muss dem Inhalt eines HTML Tags entsprechen. dieser Inhalt wird dann als Tag gerendert
+                            headline = h2
+                        }
+                        2 {
+                          name = titleUniform
+                          type = multivalue
+                          subnode = 
+                        }
+                        3 {
+                          name = part
+                          type = singlevalue
+                          subnode = 
+                        }
+                        5 {
+                            name = objectType
+                            type = singlevalue
+                            subnode = 
+                        }
+                        6 {
+                            name = entity
+                            type = multivalue
+                            subtype = entity
+                            hidelabel = true
+                            allowthisfilter = 1
+                            showgndexplorer = 1 
+                        } 
+                        10 {
+                            name = publisher
+                            type = multivalue
+                            subnode = 
+                        }
+                        11 {
+                            name = locationQualified
+                            type = multivalue
+                            subnode = 
+                            subtype = locationQualified
+                            hidelabel = true
+                        }
+                        12 {
+                            name = showtime
+                            type = multivalue
+                            subnode = 
+                        }
+                        13 {
+                            name = format
+                            type = singlevalue
+                            subnode = 
+                        }
+                        15 {
+                            name = objectdimension
+                            type = singlevalue
+                            subnode = 
+                        }
+                        17 {
+                            name = extent
+                            type = singlevalue
+                        }
+                        18 {
+                            name = besetzung
+                            type = singlevalue
+                        }
+                        19 {
+                          name = Formtyp
+                          type = singlevalue
+                          subnode = 
+                        }
+                        20 {
+                          name = Blattformat
+                          type = singlevalue
+                          subnode = 
+                        }
+                        21 {
+                            name = Textspiegel
+                            type = singlevalue
+                            subnode = 
+                        }
+                        22 {
+                            name = Außenmaße
+                            type = singlevalue
+                            subnode = 
+                        }
+                        23 {
+                            name = Zeilenzahl
+                            type = singlevalue
+                            subnode = 
+                        }
+                        24 {
+                            name = Blattzahl
+                            type = singlevalue
+                            subnode = 
+                        }
+                        26{
+                          name = language
+                          type = multivalue
+                        } 
+                        30 {
+                            name = material
+                            type = multivalue
+                            # Wenn die Werte nicht untereinander abgebildet werden, sollen diesen Wert auf "horizontal" setzen
+                            valuealignment = horizontal
+                            allowthisfilter = 1
+                        }
+                        31 {
+                          name = Farbe
+                          type = singlevalue
+                          subnode = 
+                        }
+                        32 {
+                          name = Zustand
+                          type = singlevalue
+                          subnode = 
+                        }
+                        33 {
+                          name = Einband
+                          type = singlevalue
+                          subnode = 
+                        }
+                        34 {
+                          name = Duktus
+                          type = singlevalue
+                          subnode = 
+                        }
+                        35 {
+                          name = Tinte
+                          type = singlevalue
+                          subnode = 
+                        }
+                        36 {
+                          name = Ausführung
+                          type = singlevalue
+                          subnode = 
+                        }
+                        39 {
+                            name = technik
+                            type = multivalue
+                            valuealignment = horizontal
+                            allowthisfilter = 1
+                        }
+                        40{
+                            name = scale
+                            type = singlevalue
+                            subnode = 
+                        }
+                        52 {
+                          name = DDC-Sachgruppe der DNB
+                          type = singlevalue
+                          subnode = 
+                        }
+                        
+                        60 {
+                            name = classificationtags
+                            subtype = gnd
+                            type = multivalue
+                            # Diesen Filter/Facette auch aus der Detail- oder Listenansicht zünden
+                            allowthisfilter = 1
+                        }
+                        62 {
+                            name = classification
+                            type = multivalue
+                        }
+                        65 {
+                            name = fingerprint
+                            type = multivalue
+                            subnode = 
+                        }
+                        66 {
+                            name = provinienz
+                            type = multivalue
+                            subnode = 
+                        }
+                        70 {
+                            name = inschrift
+                            type = singlevalue
+                            subnode = 
+                        }
+                        80 {
+                            name = genre
+                            type = multivalue
+                            subnode = 
+                        }
+                      }
+                    }
+                  4 {
+                    name = Bestand und Standort
+                    type = aggregate
+                    // dontcollapse = true
+                    colconfigclass = col-md-12 transparent line_top
+                    // show = true
+                    sub {
+                      1{
+                          name = tenant
+                          type = multivalue
+                          # Struktur des Datenfeldes ist Name$GND-Nummer - die Nummer wird als Referenz zum CultureGraph-Datensatz verwendet
+                          subtype = gnd 
+                      }
+                      3 {
+                        name = shelfmark
+                        type = multivalue
+                        subnode = 
+                      }
+                      5 {
+                          name = inventarnummer
+                          type = singlevalue
+                          # Die Feldbezeichner können auf Ebene der Objekttypen abweichen - muss ein singleValue-Field(objectType) sein oder Arraysyntax benutzen (located.0)
+                          additional_label_field = datasource
+                          subnode = 
+                      }
+                      50{
+                          name = vd18
+                          type = singlevalue
+                          
+                      }
+                      80 {
+                          name = classProject
+                          type = multivalue
+                          
+                      }
+                      100 {
+                        name = note
+                        type = singlevalue
+                        subnode = 
+                      }
+                      150{
+                        name = contents
+                        type = singlevalue
+                        labelcss = col-md-3
+                        subnode = 
+                      }
+                      200{
+                        name = contextorig
+                        type = singlevalue
+                        subtype = copy_clipboard
+                        icon = canonical
+                      }
+                    }
+                  }
+                  16 {
+                    name = Zitieren und Nachnutzen
+                    type = aggregate
+                    dontcollapse = true
+                    colconfigclass = col-md-12 transparent line_top
+                    show = true
+                    sub {
+                      100 {
+                          name = canonical
+                          type = singlevalue
+                          subtype = copy_clipboard
+                          labelcss = col-md-3
+                          icon = canonical
+                      }
+                      110 {
+                          name = link
+                          type = singlevalue
+                          labelcss = col-md-3
+                          icon = canonical
+                      }
+                      115 {
+                          name = links
+                          type = multivalue
+                          labelcss = col-md-3
+                          icon = canonical
+                      }
+                      120 {
+                          name = iiifManifest
+                          type = singlevalue
+                          subtype = copy_clipboard
+                          labelcss = col-md-3
+                          icon = iiif
+                      }
+                      130{
+                          name = derivate_urn
+                          type = multivalue
+                          subtype = urn_resolver
+                          labelcss = col-md-3
+                          icon = urn
+                      }
+                      580 {
+                          name = licence
+                          type = multivalue
+                          labelcss = col-md-3
+                          # Fallback für den Fall, dass kein Wert in den Datensätzen zu finden war - muss von dem Typ sein, wie das Feld ist (Array oder String)
+                          fallback {
+                            0 = CC BY-NC-SA 4.0 1
+                          }
+                      }
+                      610 {
+                            name = locationPolygones
+                            labelcss = col-md-3
+                            type = multivalue
+                            subtype = copy_clipboard
+                            icon = polygone_geojson
+                        }
+                    }
+                  }
+                  17 {
+                    name = Kontaktinformationen
+                    type = aggregate
+                    // dontcollapse = true
+                    colconfigclass = col-md-12 transparent line_top
+                    // show = true
+                    sub {
+                      10 { 
+                        name = contact
+                        labelcss = col-md-3
+                        type = multivalue
+                        hidelabel = true
+                        subtype = 
+                      }
+                    }
+                  }
+                  18{
+                    name = Administrative Angaben
+                    type = aggregate
+                    colconfigclass = col-md-12 transparent line_top
+                    sub{
+                      1 {
+                        name = datum_edv
+                        type = singlevalue
+                        subnode = 
+                      }
+                      2 {
+                        name = updated
+                        type = singlevalue
+                        subnode = 
+                      }
+                      4 {
+                        name = harvested
+                        type = singlevalue
+                        subnode = 
+                      }
+                    }
+                  }
+                  28 {
+                    name = Feedback
+                    type = aggregate
+                    colconfigclass = col-md-12 transparent line_top
+                    sub {
+                      10 {
+                        name = passthrough
+                        hidelabel = true
+                        subtype = feedback
+                        type = donotprocessvalue
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        1{
+          fieldname = Handschriften_alt
+          main_cols{
+            master{
+              0{
+                name = leftcol
+                colconfigclass = col-md-6
+                fields{
+                  10 {
+                    name = passthrough
+                    hidelabel = true
+                    subtype = imageviewer
+                    type = donotprocessvalue
+                    colconfigclass = transparent
+                  }
+                  90{
+                    name = Karte
+                    type = aggregate
+                    dontshowheadline = true
+                    hideaggregationheader = true 
+                    colconfigclass = col-md-12 transparent
+                    specialaggregationtype = mapblock
+                    dontcollapse = true
+                    show = true
+                    sub{
+                      10 {
+                        name = passthrough
+                        hidelabel = true
+                        subtype = map
+                        type = donotprocessvalue
+                      }
+                    }
+                  }
+                }
+                // Wenn keine Daten in den obenstehenden Feldern vorhanden sind werden alternativ die folgenden Felder aus der nachgelagerten Struktur geladen. Diese werden dann an den ursprünglich angedachten Positionen gelöscht
+                ifempty{
+                  mastercol = 1
+                  // aktuell kann man nur ein Feld einfügen
+                  fieldnumber = 1
+                }
+              }
+              1{
+                name = rightcol
+                colconfigclass = col-md-6
+                 fields{
+                  1{
+                    name = Allgemein
+                    type = aggregate
+                    dontshowheadline = true
+                    hideaggregationheader = true 
+                    colconfigclass = col-md transparent
+                    // erstes element aufgeklappt show = true
+                    show = true
+                    sub{
+                        0 {
+                            name = title
+                            type = singlevalue
+                            hidelabel = true
+                            // headline muss dem Inhalt eines HTML Tags entsprechen. dieser Inhalt wird dann als Tag gerendert
+                            headline = h2
+                        }
+                        2 {
+                          name = titleUniform
+                          type = multivalue
+                          subnode = 
+                        }
+                        3 {
+                          name = part
+                          type = singlevalue
+                          subnode = 
+                        }
+                        5 {
+                            name = objectType
+                            type = singlevalue
+                            subnode = 
+                        }
+                        6 {
+                            name = entity
+                            type = multivalue
+                            subtype = entity
+                            hidelabel = true
+                            allowthisfilter = 1
+                            showgndexplorer = 1 
+                        } 
+                        7{
+                            name = tenant
+                            type = multivalue
+                            # Struktur des Datenfeldes ist Name$GND-Nummer - die Nummer wird als Referenz zum CultureGraph-Datensatz verwendet
+                            subtype = gnd 
+                        }
+                        8 {
+                            name = shelfmark
+                            type = multivalue
+                            subnode = 
+                        }
+                        10 {
+                            name = publisher
+                            type = multivalue
+                            subnode = 
+                        }
+                        11 {
+                            name = locationQualified
+                            type = multivalue
+                            subnode = 
+                            subtype = locationQualified
+                            hidelabel = true
+                        }
+                        12 {
+                            name = showtime
+                            type = multivalue
+                            subnode = 
+                        }
+                        13 {
+                            name = format
+                            type = singlevalue
+                            subnode = 
+                        }
+                        15 {
+                            name = objectdimension
+                            type = singlevalue
+                            subnode = 
+                        }
+                        17 {
+                            name = extent
+                            type = singlevalue
+                        }
+                        18 {
+                            name = besetzung
+                            type = singlevalue
+                        }
+                        19 {
+                          name = Formtyp
+                          type = singlevalue
+                          subnode = 
+                        }
+                        20 {
+                          name = Blattformat
+                          type = singlevalue
+                          subnode = 
+                        }
+                        21 {
+                            name = Textspiegel
+                            type = singlevalue
+                            subnode = 
+                        }
+                        22 {
+                            name = Außenmaße
+                            type = singlevalue
+                            subnode = 
+                        }
+                        23 {
+                            name = Zeilenzahl
+                            type = singlevalue
+                            subnode = 
+                        }
+                        24 {
+                            name = Blattzahl
+                            type = singlevalue
+                            subnode = 
+                        }
+                        25{
+                          name = language
+                          type = multivalue
+                        } 
+                        30 {
+                            name = material
+                            type = multivalue
+                            # Wenn die Werte nicht untereinander abgebildet werden, sollen diesen Wert auf "horizontal" setzen
+                            valuealignment = horizontal
+                            allowthisfilter = 1
+                        }
+                        31 {
+                          name = Farbe
+                          type = singlevalue
+                          subnode = 
+                        }
+                        32 {
+                          name = Zustand
+                          type = singlevalue
+                          subnode = 
+                        }
+                        33 {
+                          name = Einband
+                          type = singlevalue
+                          subnode = 
+                        }
+                        34 {
+                          name = Duktus
+                          type = singlevalue
+                          subnode = 
+                        }
+                        35 {
+                          name = Tinte
+                          type = singlevalue
+                          subnode = 
+                        }
+                        36 {
+                          name = Ausführung
+                          type = singlevalue
+                          subnode = 
+                        }
+                        39 {
+                            name = technik
+                            type = multivalue
+                            valuealignment = horizontal
+                            allowthisfilter = 1
+                        }
+                        40{
+                            name = scale
+                            type = singlevalue
+                            subnode = 
+                        }
+                        52 {
+                          name = DDC-Sachgruppe der DNB
+                          type = singlevalue
+                          subnode = 
+                        }
+                        58 {
+                            name = inventarnummer
+                            type = singlevalue
+                            # Die Feldbezeichner können auf Ebene der Objekttypen abweichen - muss ein singleValue-Field(objectType) sein oder Arraysyntax benutzen (located.0)
+                            additional_label_field = datasource
+                            subnode = 
+                        }
+                        60 {
+                            name = classificationtags
+                            type = multivalue
+                            subtype = gnd
+                            # Diesen Filter/Facette auch aus der Detail- oder Listenansicht zünden
+                            allowthisfilter = 1
+                        }
+                        62 {
+                            name = classification
+                            type = multivalue
+                        }
+                        65 {
+                            name = fingerprint
+                            type = multivalue
+                            subnode = 
+                        }
+                        66 {
+                            name = provinienz
+                            type = multivalue
+                            subnode = 
+                        }
+                        70 {
+                            name = inschrift
+                            type = singlevalue
+                            subnode = 
+                        }
+                        80 {
+                            name = genre
+                            type = multivalue
+                            subnode = 
+                        }
+                        160 {
+                            name = classProject
+                            type = multivalue
+                            
+                        }
+                        170{
+                            name = vd18
+                            type = singlevalue
+                            
+                        }
+                        200{
+                            name = contextorig
+                            type = singlevalue
+                            icon = canonical
+                        }
+                      }
+                    }
+                  6 {
+                    name = Anmerkungen
+                    type = aggregate
+                    // dontcollapse = true
+                    colconfigclass = col-md-12 transparent line_top
+                    // show = true
+                    sub {
+                      1 {
+                          name = note
+                          labelcss = col-md-3
+                          type = singlevalue
+                          subnode = 
+                      }
+                      10{
+                        name = oldinventarnummer
+                        type = multivalue
+                        labelcss = col-md-3
+                        subnode = 
+                      }
+                      5{
+                        name = history
+                        type = singlevalue
+                        labelcss = col-md-3
+                        subnode = 
+                      }
+                      2100 {
+                          name = textkurz
+                          type = singlevalue
+                          labelcss = col-md-3
+                          subnode = 
+                      }
+                      2150{
+                        name = contents
+                        type = singlevalue
+                        labelcss = col-md-3
+                        subnode = 
+                      }
+                      2200 {
+                          name = descriptionlong
+                          type = singlevalue
+                          labelcss = col-md-3
+                          subnode = 
+                      }
+                    }
+                  }
+                  16 {
+                    name = Zitieren und Nachnutzen
+                    type = aggregate
+                    dontcollapse = true
+                    colconfigclass = col-md-12 transparent line_top
+                    show = true
+                    sub {
+                      100 {
+                          name = canonical
+                          type = singlevalue
+                          subtype = copy_clipboard
+                          labelcss = col-md-3
+                          icon = canonical
+                      }
+                      110 {
+                          name = link
+                          type = singlevalue
+                          labelcss = col-md-3
+                          icon = canonical
+                      }
+                      115 {
+                          name = links
+                          type = multivalue
+                          labelcss = col-md-3
+                          icon = canonical
+                      }
+                      120 {
+                          name = iiifManifest
+                          type = singlevalue
+                          subtype = copy_clipboard
+                          labelcss = col-md-3
+                          icon = iiif
+                      }
+                      130{
+                          name = derivate_urn
+                          type = multivalue
+                          subtype = urn_resolver
+                          labelcss = col-md-3
+                          icon = urn
+                      }
+                      580 {
+                          name = licence
+                          type = multivalue
+                          labelcss = col-md-3
+                          # Fallback für den Fall, dass kein Wert in den Datensätzen zu finden war
+                          fallback {
+                            0 = CC BY-NC-SA 4.0 1
+                          }
+                      }
+                      610 {
+                            name = locationPolygones
+                            labelcss = col-md-3
+                            type = multivalue
+                            subtype = copy_clipboard
+                            icon = polygone_geojson
+                        }
+                    }
+                  }
+                  17 {
+                    name = Kontaktinformationen
+                    type = aggregate
+                    // dontcollapse = true
+                    colconfigclass = col-md-12 transparent line_top
+                    // show = true
+                    sub {
+                      10 { 
+                        name = contact
+                        labelcss = col-md-3
+                        type = multivalue
+                        hidelabel = true
+                        subtype = 
+                      }
+                    }
+                  }
+                  18{
+                    name = Administrative Angaben
+                    type = aggregate
+                    colconfigclass = col-md-12 transparent line_top
+                    sub{
+                      1 {
+                        name = datum_edv
+                        type = singlevalue
+                        subnode = 
+                      }
+                      2 {
+                        name = updated
+                        type = singlevalue
+                        subnode = 
+                      }
+                      4 {
+                        name = harvested
+                        type = singlevalue
+                        subnode = 
+                      }
+                    }
+                  }
+                  28 {
+                    name = Feedback
+                    type = aggregate
+                    colconfigclass = col-md-12 transparent line_top
+                    sub {
+                      10 {
+                        name = passthrough
+                        hidelabel = true
+                        subtype = feedback
+                        type = donotprocessvalue
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      childobjects{
+        sorting{
+          field = startdate
+        }
+        headline{
+          name = title
+          type = singlevalue
+          subnode = 
+        }
+        images{
+          // Anzahl der Bilder, die im Detailview nebeneinander dargestellt werden sollen
+          count = 1
+          // Für den Fall, dass keine Bilder vorhanden sind, wird kein Placeholder benutzt
+          dontshowplaceholder = 1 
+        }
+        # Anordnung der Daten - auskommentieren(vertikale Darstellung) oder 'horizontal'(horizontale Darstellung, kommagetrennt) - aktuell nur für Gridview umgesetzt
+        fieldalignment = horizontal
+        fields{
+          1{
+              name = tenant
+              type = multivalue
+              # Struktur des Datenfeldes ist Name$GND-Nummer - die Nummer wird als Referenz zum CultureGraph-Datensatz verwendet
+              subtype = gnd
+              # keinen Link zum Anzeigen der Normdaten ausspielen - korrespondiert nur mit den "subtype" gnd und entity
+              hidenormdata = 1
+              hidelabel = true
+          }
+          20{
+              name = objectType
+              type = singlevalue
+              hidelabel = true
+          }
+          60{
+              name = showtime
+              type = multivalue
+              hidelabel = true
+          }
+          80 {
+              name = entity
+              type = multivalue
+              subtype = entity
+              hidelabel = true
+              # keinen Link zum Anzeigen der Normdaten ausspielen - korrespondiert nur mit den "subtype" gnd und entity
+              hidenormdata = 1 
+              # nur das erste Element des Multivaluefeldes zeigen - aktuell nur bei dem Subtype "entity" implementiert
+              showonlyfirstitem = 1
+              # Rollenbezeichnung nicht ausspielen -> aktuell nur für Gridview umgesetzt
+              hidepersonroles = 1
+          } 
+        }
+      }
+      listview{
+        headline{
+          name = title
+          type = singlevalue
+          subnode = 
+        }
+        images{
+          // Anzahl der Bilder, die im Detailview nebeneinander dargestellt werden sollen
+          count = 1
+        }
+        fields{
+          1{
+              name = tenant
+              type = multivalue
+              # Struktur des Datenfeldes ist Name$GND-Nummer - die Nummer wird als Referenz zum CultureGraph-Datensatz verwendet
+              subtype = gnd
+              # keinen Link zum Anzeigen der Normdaten ausspielen - korrespondiert nur mit den "subtype" gnd und entity
+              hidenormdata = 1 
+          }
+          20{
+              name = objectType
+              type = singlevalue
+              subnode = 
+          }
+          60{
+              name = showtime
+              type = multivalue
+              subnode = 
+          }
+          80 {
+              name = entity
+              type = multivalue
+              subtype = entity
+              hidelabel = true
+              # keinen Link zum Anzeigen der Normdaten ausspielen - korrespondiert nur mit den "subtype" gnd und entity
+              hidenormdata = 1 
+          } 
+        }
+      }
+      mapview {
+        headline {
+          name = title
+          type = singlevalue
+          subnode = 
+        }
+        // Felder, die in das GEOJSON Objekt geladen werden
+        geojsonproperties {
+            0 = link
+         // 1 = name
+         // 2 = objecttype
+        }
+        gui {
+          showboundingboxsearch = 1
+          // Die verschiedenen Suchmodi für die Boundingbox-Suche - korrespondiert mit den Solr-Spatial-Suchfunkionen (Within, Contains, Intersects etc.) 
+          // der erste Bezeichner ist die initiale Suchstrategie
+          showboundingboxsearchtypes {
+            0 = Within
+            1 = Intersects
+          }
+        }
+        images {
+          // Anzahl der Bilder, die im Detailview nebeneinander dargestellt werden sollen
+          count = 1
+        }
+        fields {
+          0 {
+              name = titleAlt
+              type = multivalue
+              subnode = 
+          }
+          2 {
+              name = titleParallel
+              type = multivalue
+              subnode = 
+          }
+          4 {
+              name = tenant
+              type = multivalue
+              subnode = 
+          }
+          8 {
+              name = classCollection
+              type = multivalue
+              subnode = 
+          }
+          9 {
+              name = publisher
+              type = multivalue
+              subnode = 
+          }
+          10 {
+              name = showtime
+              type = multivalue
+              subnode = 
+          }
+          12 {
+              name = datentyp
+              type = multivalue
+              subnode = 
+          }
+          14 {
+              name = scale
+              type = singlevalue
+              subnode = 
+          }
+        }
+      }
+      gridview{
+        headline{
+          name = title
+          type = singlevalue
+          subnode = 
+        }
+        images{
+          // Anzahl der Bilder, die im Detailview nebeneinander dargestellt werden sollen
+          count = 1
+          // Für den Fall, dass keine Bilder vorhanden sind, wird kein Placeholder benutzt
+          dontshowplaceholder = 1 
+        }
+        # Anordnung der Daten - auskommentieren(vertikale Darstellung) oder 'horizontal'(horizontale Darstellung, kommagetrennt) - aktuell nur für Gridview umgesetzt
+        fieldalignment = horizontal
+        fields{
+          1{
+              name = tenant
+              type = multivalue
+              # Struktur des Datenfeldes ist Name$GND-Nummer - die Nummer wird als Referenz zum CultureGraph-Datensatz verwendet
+              subtype = gnd
+              # keinen Link zum Anzeigen der Normdaten ausspielen - korrespondiert nur mit den "subtype" gnd und entity
+              hidenormdata = 1
+              hidelabel = true
+          }
+          20{
+              name = objectType
+              type = singlevalue
+              hidelabel = true
+          }
+          60{
+              name = showtime
+              type = multivalue
+              hidelabel = true
+          }
+          80 {
+              name = entity
+              type = multivalue
+              subtype = entity
+              hidelabel = true
+              # keinen Link zum Anzeigen der Normdaten ausspielen - korrespondiert nur mit den "subtype" gnd und entity
+              hidenormdata = 1 
+              # nur das erste Element des Multivaluefeldes zeigen - aktuell nur bei dem Subtype "entity" implementiert
+              showonlyfirstitem = 1
+              # Rollenbezeichnung nicht ausspielen -> aktuell nur für Gridview umgesetzt
+              hidepersonroles = 1
+          } 
+        }
+      }
+      detailview{
+        headline{
+          name = title
+          type = singlevalue
+          subnode = 
+        }
+        headline >
+        config{
+          hidelowerbacklink = true
+          zoomlevelondetailmap = 4
+          showDownloadNextToShare = true
+        }
+        # Vorgabe des Patterns zum Bau der Detailansicht
+        main_cols{
+          master{
+            0{
+              name = leftcol
+              colconfigclass = col-md-6
+              fields{
+                10 {
+                  name = passthrough
+                  hidelabel = true
+                  subtype = imageviewer
+                  type = donotprocessvalue
+                  colconfigclass = transparent
+                }
+                90{
+                  name = Karte
+                  type = aggregate
+                  dontshowheadline = true
+                  hideaggregationheader = true 
+                  colconfigclass = col-md-12 transparent 
+                  specialaggregationtype = mapblock
+                  dontcollapse = true
+                  show = true
+                  sub{
+                    10 {
+                      name = passthrough
+                      hidelabel = true
+                      subtype = map
+                      type = donotprocessvalue
+                    }
+                  }
+                }
+              }
+              // Wenn keine Daten in den obenstehenden Feldern vorhanden sind werden alternativ die folgenden Felder aus der nachgelagerten Struktur geladen. Diese werden dann an den ursprünglich angedachten Positionen gelöscht
+              ifempty{
+                mastercol = 1
+                # aktuell kann man nur ein Feld einfügen
+                fieldnumber = 1
+              }
+            }
+            1{
+              name = rightcol
+              colconfigclass = col-md-6
+               fields{
+                1{
+                  name = Allgemein
+                  type = aggregate
+                  dontshowheadline = true
+                  hideaggregationheader = true 
+                  colconfigclass = col-md transparent
+                  # erstes element aufgeklappt show = true
+                  show = true
+                  sub{
+                      0 {
+                          name = title
+                          type = singlevalue
+                          hidelabel = true
+                          # headline muss dem Inhalt eines HTML Tags entsprechen. dieser Inhalt wird dann als Tag gerendert
+                          headline = h2
+                      }
+                      1 {
+                        name = titleUniform
+                        type = multivalue
+                        subnode = 
+                      }
+                      2 {
+                        name = titleAlt
+                        type = multivalue
+                        subnode = 
+                      }
+                      3 {
+                          name = part
+                          type = singlevalue
+                          subnode = 
+                        }
+                      5 {
+                          name = objectType
+                          type = singlevalue
+                      }
+                      7 {
+                          name = entity
+                          type = multivalue
+                          subtype = entity
+                          hidelabel = true
+                          allowthisfilter = 1
+                          showgndexplorer = 1 
+                      } 
+                      8{
+                          name = tenant
+                          type = multivalue
+                          # Struktur des Datenfeldes ist Name$GND-Nummer - die Nummer wird als Referenz zum CultureGraph-Datensatz verwendet
+                          subtype = gnd 
+                      }
+                      9 {
+                          name = shelfmark
+                          type = multivalue
+                          subnode = 
+                      }
+                      10 {
+                          name = publisher
+                          type = multivalue
+                          subnode = 
+                      }
+                      11 {
+                          name = locationQualified
+                          type = multivalue
+                          subnode = 
+                          subtype = locationQualified
+                          hidelabel = true
+                      }
+                      12 {
+                          name = showtime
+                          type = multivalue
+                          subnode = 
+                      }
+                      13 {
+                          name = format
+                          type = singlevalue
+                          subnode = 
+                      }
+                      15 {
+                          name = objectdimension
+                          type = singlevalue
+                          subnode = 
+                      }
+                      17 {
+                          name = extent
+                          type = singlevalue
+                      }
+                      18 {
+                          name = besetzung
+                          type = singlevalue
+                      }
+                      19 {
+                        name = Formtyp
+                        type = singlevalue
+                        subnode = 
+                      }
+                      20 {
+                          name = Blattformat
+                          type = singlevalue
+                      }
+                      21 {
+                          name = Textspiegel
+                          type = singlevalue
+                      }
+                      22 {
+                          name = Außenmaße
+                          type = singlevalue
+                      }
+                      23 {
+                          name = Zeilenzahl
+                          type = singlevalue
+                          subnode = 
+                      }
+                      24 {
+                        name = Blattzahl
+                        type = singlevalue
+                        subnode = 
+                      }
+                      25{
+                        name = language
+                        type = multivalue
+                      } 
+                      26 {
+                        name = parent
+                        type = multivalue
+                        subtype = detaillink
+                      }
+                      30 {
+                        name = material
+                        type = multivalue
+                        # Wenn die Werte nicht untereinander abgebildet werden, sollen diesen Wert auf "horizontal" setzen
+                        valuealignment = horizontal
+                        allowthisfilter = 1
+                      }
+                      31 {
+                        name = Farbe
+                        type = singlevalue
+                        subnode = 
+                      }
+                      32 {
+                        name = Zustand
+                        type = singlevalue
+                        subnode = 
+                      }
+                      33 {
+                        name = Einband
+                        type = singlevalue
+                        subnode = 
+                      }
+                      34 {
+                        name = Duktus
+                        type = singlevalue
+                        subnode = 
+                      }
+                      35 {
+                        name = Tinte
+                        type = singlevalue
+                        subnode = 
+                      }
+                      36 {
+                        name = Ausführung
+                        type = singlevalue
+                        subnode = 
+                      }
+                      39 {
+                        name = technik
+                        type = multivalue
+                        valuealignment = horizontal
+                        allowthisfilter = 1
+                      }
+                      40{
+                        name = scale
+                        type = singlevalue
+                        subnode = 
+                      }
+                      52 {
+                        name = DDC-Sachgruppe der DNB
+                        type = singlevalue
+                        subnode = 
+                      }
+                      55 {
+                        name = note
+                        type = singlevalue
+                        subnode = 
+                      }
+                      58 {
+                          name = inventarnummer
+                          type = singlevalue
+                          # Die Feldbezeichner können auf Ebene der Objekttypen abweichen - muss ein singleValue-Field(objectType) sein oder Arraysyntax benutzen (located.0)
+                          additional_label_field = datasource
+                          subnode = 
+                      }
+                      60 {
+                          name = classificationtags
+                          subtype = gnd
+                          type = multivalue
+                          # Diesen Filter/Facette auch aus der Detail- oder Listenansicht zünden
+                          allowthisfilter = 1
+                      }
+                      62 {
+                          name = classification
+                          type = multivalue
+                      }
+                      65 {
+                          name = fingerprint
+                          type = multivalue
+                          subnode = 
+                      }
+                      66 {
+                            name = provinienz
+                            type = multivalue
+                            subnode = 
+                        }
+                      70 {
+                          name = inschrift
+                          type = singlevalue
+                          subnode = 
+                      }
+                      80 {
+                          name = genre
+                          type = multivalue
+                          subnode = 
+                      }
+                    }
+                  }
+                4 {
+                  name = Standort und Projekt
+                  hideaggregationheader = true 
+                  type = aggregate
+                  dontcollapse = true
+                  colconfigclass = col-md-12 transparent line_top
+                  show = true
+                  sub {
+                    10 {
+                        name = located
+                        type = multivalue
+                    }
+                    15{
+                      name = component
+                      type = multivalue
+                      // labelcss = col-md-3
+                    }
+                    20{
+                      name = contextorig
+                      type = singlevalue
+                      icon = canonical
+                      subtype = copy_clipboard_with_link_external
+                    }
+                    50{
+                        name = vd18
+                        type = singlevalue
+                        
+                    }
+                    500 {
+                        name = classProject
+                        type = multivalue
+                        allowthisfilter = 1
+                    }
+                  }
+                }
+
+                6 {
+                  name = moreobject.info
+                  type = aggregate
+                  // dontcollapse = true
+                  colconfigclass = col-md-12 transparent line_top
+                  // show = true
+                  sub {
+                    10{
+                      name = oldinventarnummer
+                      type = multivalue
+                      labelcss = col-md-3
+                      subnode = 
+                    }
+                    40{
+                      name = abstract
+                      type = singlevalue
+                      labelcss = col-md-3
+                      // hidelabel = true
+                      // fieldalignment = vertical
+                      subnode = 
+                    }
+                    5{
+                      name = history
+                      type = singlevalue
+                      labelcss = col-md-3
+                      subnode = 
+                    }
+                    2100 {
+                        name = textkurz
+                        type = singlevalue
+                        labelcss = col-md-3
+                        subnode = 
+                    }
+                    2150{
+                      name = contents
+                      type = singlevalue
+                      labelcss = col-md-3
+                      subnode = 
+                    }
+                    2200 {
+                        name = descriptionlong
+                        type = singlevalue
+                        labelcss = col-md-3
+                        subnode = 
+                    }
+                  }
+                }
+                8 {
+                  name = biblio.info
+                  type = aggregate
+                  // dontcollapse = true
+                  colconfigclass = col-md-12 transparent line_top
+                  // show = true
+                  sub {
+                    10 { 
+                        name = literaturUnstructured
+                        labelcss = col-md-3
+                        type = multivalue
+                        subtype = 
+                    }
+                    20 { 
+                        name = literatur
+                        type = multivalue
+                        labelcss = col-md-3
+                        subtype = literature
+                    }
+                  }
+                }
+                16 {
+                  name = zugriff.und.nutzung
+                  type = aggregate
+                  dontcollapse = true
+                  colconfigclass = col-md-12 transparent line_top
+                  show = true
+                  sub {
+                    100 {
+                        name = canonical
+                        type = singlevalue
+                        // subtype = copy_clipboard
+                        subtype = copy_clipboard_with_link_external
+                        labelcss = col-md-3
+                        icon = canonical
+                    }
+                    110 {
+                        name = link
+                        type = singlevalue
+                        labelcss = col-md-3
+                        icon = canonical
+                    }
+                    115 {
+                        name = links
+                        type = multivalue
+                        labelcss = col-md-3
+                        icon = canonical
+                    }
+                    120 {
+                        name = iiifManifest
+                        type = singlevalue
+                        // subtype = copy_clipboard
+                        // subtype = link_external
+                        subtype = copy_clipboard_with_link_external
+                        labelcss = col-md-3
+                        icon = iiif
+                        sublabel = iiifManifest_clipboard
+                    }
+                    130{
+                        name = derivate_urn
+                        type = multivalue
+                        subtype = urn_resolver
+                        labelcss = col-md-3
+                        icon = urn
+                    }
+                    580 {
+                        name = licence
+                        type = multivalue
+                        labelcss = col-md-3
+                        # Fallback für den Fall, dass kein Wert in den Datensätzen zu finden war
+                        fallback {
+                          0 = CC BY-NC-SA 4.0 1
+                        }
+                    }
+                    610 {
+                          name = locationPolygones
+                          labelcss = col-md-3
+                          type = multivalue
+                          subtype = copy_clipboard
+                          icon = polygone_geojson
+                      }
+                  }
+                }
+                17 {
+                  name = kontakt.info
+                  type = aggregate
+                  // dontcollapse = true
+                  colconfigclass = col-md-12 transparent line_top
+                  // show = true
+                  sub {
+                    10 { 
+                      name = contact
+                      labelcss = col-md-3
+                      type = multivalue
+                      hidelabel = true
+                      subtype = 
+                    }
+                  }
+                }
+                18{
+                  name = admin.details
+                  type = aggregate
+                  colconfigclass = col-md-12 transparent line_top
+                  sub{
+                    1 {
+                      name = datum_edv
+                      type = singlevalue
+                      subnode = 
+                    }
+                    2 {
+                      name = updated
+                      type = singlevalue
+                      subnode = 
+                    }
+                    4 {
+                      name = harvested
+                      type = singlevalue
+                      subnode = 
+                    }
+                  }
+                }
+                28 {
+                  name = Feedback
+                  type = aggregate
+                  colconfigclass = col-md-12 transparent line_top
+                  sub {
+                    10 {
+                      name = passthrough
+                      hidelabel = true
+                      subtype = feedback
+                      type = donotprocessvalue
+                    }
+                  }
+                }
+                30 {
+                  name = download
+                  type = multivalue
+                  nolabel = 1
+                  #hidelabel = true
+                  labelcss = col-md-3
+                  icon = canonical
+                  subtype = download
+                }
+              }
+            }
+            2{
+              name = bottomcol
+              colconfigclass = col-md-12 transparent
+              fields{
+                1{
+                  name = Untergeordnete Elemente
+                  type = aggregate
+                  dontcollapse = true
+                  dontshowheadline = true
+                  hideaggregationheader = true 
+                  colconfigclass = col-md transparent
+                  // erstes element aufgeklappt show = true
+                  show = true
+                  sub{
+                    0 {
+                      name = passthrough
+                      hidelabel = true
+                      dontshowheadline = true
+                      subtype = childelements
+                      labelcss = col-md-3
+                      type = donotprocessvalue
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        // Konfiguration der Bilddarstellung
+        images{
+          // @all -> bei useopenlayers kann im Moment nur EIN Bild dargestellt werden
+          # Wenn es ein IIIF Manifest gibt, wird das Bild in Openlayers dargestellt
+          useopenlayers = 1
+          # Anzahl der Bilder, die im Detailview nebeneinander dargestellt werden sollen
+          count = 1
+          # Für den Fall, dass keine Bilder vorhanden sind, wird kein Placeholder benutzt
+          dontshowplaceholder = 1 
+          # die zusätzlichen Bilder sollen als Slider unter dem Hauptbild dargestellt werden
+          showmultipleimagesasslider = 1
+          # Link zu Miradorviewer
+          showmiradorlink = 1
+          // Alternative Darstellung der Viewercontrols 
+          // freilassen für Standard, alternativ: 1 => Controls werden im unteren Bereich nebeneinander dargestellt, kann fortgeschrieben werden bei weiteren Optionen, die gewünscht werden
+          viewercontrolview = 1
+          // wenn dieser Wert gesetzt ist und es mehr als eine Abbildung gint, wird ein Button gerendert, der im Viewer eine Gridansicht der Objekte ermöglicht - auskommentieren wenn nicht gewünscht
+          viewergridview = 1
+          // zeigt Vor- und Zurückbuttons an, wenn mehr als eine Abbildung vorhanden ist - auskommentieren wenn nicht gewünscht
+          viewerprevnext = 1
+        }
+      }
+    }
+  }
+}
+config.spamProtectEmailAddresses = 2
+config.spamProtectEmailAddresses_atSubst = (at)
+
+// Link zur Datenschutzseite
+lib.datenschutz = TEXT
+lib.datenschutz.value = {$datenschutz.uid}
+
+// Einsprachige Umsetzung
+lib.language = COA
+lib.language {
+   10 = HMENU
+   10 {
+      special = language
+      addQueryString = 1
+      special.value = 0,1
+      1 = TMENU
+      1 {
+         NO = 1
+         NO {
+            stdWrap.cObject = TEXT
+            stdWrap.cObject {
+                value = DE || EN
+                insertData = 1
+            }
+            wrapItemAndSub = <li>|</li>
+        }
+        ACT < .NO
+        ACT = 1
+        ACT{
+            wrapItemAndSub = <li class="active">|</li>
+         }
+      }
+    }
+    wrap = <ul id="language_menu" class="language-menu">|</ul>
+}
+
+// Logo
+lib.logo.20.value = <img src="fileadmin/user_upload/Gotha/logo.svg" alt="zur Startseite">
+
+lib.gpvar = TEXT
+lib.gpvar {
+    value = test
+}
+
+lib.usersession = USER_INT
+lib.usersession {
+  userFunc = JO\JoContent\Userfunc\Sessionvar->getSessionuser
+}
+
+lib.sideMenu = COA
+lib.sideMenu {
+  10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+  10 {
+    special = directory
+    special.value = 24
+    as = sideMenu1
+  }
+  20 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+  20 {
+    special = directory
+    special.value = 20
+    as = sideMenu2
+  }
+  30 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+  30 {
+    special = directory
+    special.value = 16
+    as = sideMenu3
+  }
+  40 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+  40 {
+    special = directory
+    special.value = 28
+    dataProcessing {
+      10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+      10 {
+        references.fieldName = media
+      }
+    }
+    as = upperMenu
+  }
+}
+
+// Aktuelles Level ausgeben
+lib.level = TEXT
+lib.level {
+  data = level:1
+}
+
+// Breadcumbpath
+lib.rootline = COA
+lib.rootline {
+  10 = HMENU
+  10 {
+    special = rootline
+      special.range = 0|5
+      entryLevel = 0
+      #wrap = <p>|</p>
+      1 = TMENU
+      1.NO {
+          stdWrap.htmlSpecialChars = 1
+          linkWrap = |&nbsp;/&nbsp;|*||*| <span>|</span>
+          doNotLinkIt = |*| 0 |*| 1
+      }
+  }
+}
+// Seitenkonfiguration
+page {
+  // Globale Javascriptvariablen
+  inlineSettings {
+    parallaxe {
+      0 {
+        nodename = .header_fullscreen . header_image
+        value = 5
+      }
+      1 {
+        nodename = .hc
+        value = 7
+      }
+    }
+    scrtop = nojump
+  }
+  shortcutIcon = typo3conf/ext/jo_template/Resources/Public/Icons/Gotha/favicon.ico
+  meta {
+    format-detection = telephone = no
+    msapplication-TileImage = typo3conf/ext/jo_content/Resources/Public/Icons/Gotha/win8-tile-144x144.png
+    msapplication-TileColor = #ffffff
+    msapplication-navbutton-color = #ffffff
+    theme-color = #B58831
+    msapplication-square70x70logo = typo3conf/ext/jo_template/Resources/Public/Icons/Gotha/win8-tile-70x70.png
+    msapplication-square144x144logo = typo3conf/ext/jo_template/Resources/Public/Icons/Gotha/win8-tile-144x144.png
+    msapplication-square150x150logo = typo3conf/ext/jo_template/Resources/Public/Icons/Gotha/win8-tile-150x150.png
+    msapplication-wide310x150logo = typo3conf/ext/jo_template/Resources/Public/Icons/Gotha/win8-tile-310x150.png
+    msapplication-square310x310logo = typo3conf/ext/jo_template/Resources/Public/Icons/Gotha/win8-tile-310x310.png
+    geo.region = DE-TH
+    geo.placename = Numismatische Kommission der Länder e.V., Geschwister-Scholl-Straße 6, 10117 Berlin
+    geo.position = 52.521156; 13.392429
+    ICBM = 52.521156, 13.392429
+  google-site-verification = Qa8aFdfpPQFWuax5AnhXhDMjQCf99V_7CjSeb_f3T6M
+  }
+  headerData {
+    2 = TEXT
+    2 {
+      value(
+        <link rel="shortcut icon" type="image/x-icon" href="typo3conf/ext/jo_template/Resources/Public/Icons/Gotha/favicon.ico">
+        <link rel="icon" type="image/x-icon" href="typo3conf/ext/jo_template/Resources/Public/Icons/Gotha/favicon.ico">
+        <link rel="icon" type="image/gif" href="typo3conf/ext/jo_template/Resources/Public/Icons/Gotha/favicon.gif">
+        <link rel="icon" type="image/png" href="typo3conf/ext/jo_template/Resources/Public/Icons/Gotha/favicon.png">
+        <link rel="apple-touch-icon" href="typo3conf/ext/jo_template/Resources/Public/Icons/Gotha/apple-touch-icon.png">
+        <link rel="apple-touch-icon" href="typo3conf/ext/jo_template/Resources/Public/Icons/Gotha/apple-touch-icon-57x57.png" sizes="57x57">
+        <link rel="apple-touch-icon" href="typo3conf/ext/jo_template/Resources/Public/Icons/Gotha/apple-touch-icon-60x60.png" sizes="60x60">
+        <link rel="apple-touch-icon" href="typo3conf/ext/jo_template/Resources/Public/Icons/Gotha/apple-touch-icon-72x72.png" sizes="72x72">
+        <link rel="apple-touch-icon" href="typo3conf/ext/jo_template/Resources/Public/Icons/Gotha/apple-touch-icon-76x76.png" sizes="76x76">
+        <link rel="apple-touch-icon" href="typo3conf/ext/jo_template/Resources/Public/Icons/Gotha/apple-touch-icon-114x114.png" sizes="114x114">
+        <link rel="apple-touch-icon" href="typo3conf/ext/jo_template/Resources/Public/Icons/Gotha/apple-touch-icon-120x120.png" sizes="120x120">
+        <link rel="apple-touch-icon" href="typo3conf/ext/jo_template/Resources/Public/Icons/Gotha/apple-touch-icon-128x128.png" sizes="128x128">
+        <link rel="apple-touch-icon" href="typo3conf/ext/jo_template/Resources/Public/Icons/Gotha/apple-touch-icon-144x144.png" sizes="144x144">
+        <link rel="apple-touch-icon" href="typo3conf/ext/jo_template/Resources/Public/Icons/Gotha/apple-touch-icon-152x152.png" sizes="152x152">
+        <link rel="apple-touch-icon" href="typo3conf/ext/jo_template/Resources/Public/Icons/Gotha/apple-touch-icon-180x180.png" sizes="180x180">
+        <link rel="apple-touch-icon" href="typo3conf/ext/jo_template/Resources/Public/Icons/Gotha/apple-touch-icon-precomposed.png">
+        <link rel="icon" type="image/png" href="typo3conf/ext/jo_template/Resources/Public/Icons/Gotha/favicon-16x16.png" sizes="16x16">
+        <link rel="icon" type="image/png" href="typo3conf/ext/jo_template/Resources/Public/Icons/Gotha/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="typo3conf/ext/jo_template/Resources/Public/Icons/Gotha/favicon-96x96.png" sizes="96x96">
+        <link rel="icon" type="image/png" href="typo3conf/ext/jo_template/Resources/Public/Icons/Gotha/favicon-160x160.png" sizes="160x160">
+        <link rel="icon" type="image/png" href="typo3conf/ext/jo_template/Resources/Public/Icons/Gotha/favicon-192x192.png" sizes="192x192">
+        <link rel="icon" type="image/png" href="typo3conf/ext/jo_template/Resources/Public/Icons/Gotha/favicon-196x196.png" sizes="196x196">
+      )
+    }
+  }
+
+  includeCSS.slick = {$path.full.css}Libs/Slick/slick.css
+  includeCSS.slickthema = {$path.full.css}Libs/Slick/slick-theme.css
+  includeCSS.project = typo3conf/ext/jo_template/Resources/Public/Css/Individuell/Gotha/project.css
+  includeCSS.portal = typo3conf/ext/jo_template/Resources/Public/Css/Individuell/Gotha/jo_portal.css
+  includeCSS.content_elements = typo3conf/ext/jo_template/Resources/Public/Css/Individuell/Gotha/content_elements.css
+  includeJS.slick = {$path.full.javascript}Libs/Slick/slick.min.js
+  includeJS.nicescroll = {$path.full.javascript}Libs/Nicescroll/jquery.nicescroll.min.js
+  includeJS.mirador = {$path.full.javascript}Libs/Mirador/mirador.min.js
+  includeJS.360viwer = {$path.full.javascript}Libs/JQuery-360-grad-viewer/js-cloudimage-360-view.min.js
+  includeJS.project_base = typo3conf/ext/jo_template/Resources/Public/JavaScript/Individuell/Gotha/project_base.js
+  10 {
+      dataProcessing < lib.sideMenu
+      variables {
+        datenschutz < lib.datenschutz
+        #headline < lib.headline
+        headerPartial = TEXT
+        headerPartial.value = Header/HeaderGotha
+        language < lib.language
+        usersession < lib.usersession
+        level < lib.level
+      }
+  }
+  9999 = TEXT
+  9999{
+      value (
+
+      )
+    }
+}
+// Hauptmenu anpassen
+lib.mainMenu >
+lib.mainMenu = HMENU
+lib.mainMenu {
+  1 = TMENU
+  1 {
+    wrap = <ul class="nav navbar-nav navbar-right menue hidden-xs">|</ul>
+    expAll = 1
+    NO {
+      wrapItemAndSub = <li class="nav-item">|</li>
+        stdWrap.cObject = COA
+          stdWrap.cObject {
+              20 = FILES
+              20 {
+                references {
+                  table = pages
+                  uid.data = uid
+                  fieldName = media
+                }
+                renderObj = IMAGE
+                renderObj {
+                  file.import.data = file:current:publicUrl
+                  titleText.data = file:current:title
+                  altText.data = file:current:alternative
+                  stdWrap.typolink.parameter.data = file:current:link
+                  stdWrap.typolink.ATagParams = class="logo-mobile-right"
+                }
+              }
+              30 = TEXT
+              30 {
+                field = title//subtitle
+                if.isFalse.field = media
+              }
+          }
+    }
+    NO.wrapItemAndSub.override.cObject = COA
+        NO.wrapItemAndSub.override.cObject {
+            if {
+                value = 4
+                equals.field = doktype
+                isTrue = 1
+                isTrue.if {
+                    value.data = page:uid
+                    equals.field = shortcut
+                }
+            }
+            10 = TEXT
+            10.value = <li class="nav-item active">|</li>
+        }
+    ACT < .NO
+    ACT = 1
+    ACT {
+      wrapItemAndSub = <li class="nav-item active">|</li>
+    }
+    /*
+    IFSUB < .NO
+    IFSUB = 1
+    IFSUB {
+      wrapItemAndSub = <li class="dropdown joFirst">|</li> |*| <li class="dropdown">|</li> |*| <li class="dropdown joLast">|</li>
+      ATagParams = class="dropdown-toggle disabled" data-toggle="dropdown" aria-expanded="true"
+    }
+    ACTIFSUB < .ACT
+    ACTIFSUB = 1
+    ACTIFSUB {
+      wrapItemAndSub = <li class="dropdown joFirst active">|</li> |*| <li class="dropdown active">|</li> |*| <li class="dropdown joLast active">|</li>
+      ATagParams = class="dropdown-toggle disabled" data-toggle="dropdown" aria-expanded="true"
+    }
+    */
+  }
+  2 < .1
+  2 {
+    wrap = <div class="sub_btn"></div><ul class="sub-menu tgl_menu">|</ul>
+  }
+  3 < .2
+    3 {
+        wrap = <div class="sub_btn test"></div><div class="dropdown-menu-right tgl_menu"><ul class="dropdown-menu-2">|</ul></div>
+    }
+  4 < .2
+    4 {
+        wrap = <div class="sub_btn test"></div><div class="dropdown-menu-right tgl_menu"><ul class="dropdown-menu-3">|</ul></div>
+    }
+  5 < .2
+}
+
+
+/**
+ *  Positionierung und Ausrichtung der Contentelemente 
+ */
+tt_content.stdWrap.innerWrap.cObject = CASE
+tt_content.stdWrap.innerWrap.cObject {
+  key.field = layout
+  3 = TEXT
+  3.value = <div class="container">|</div>
+}
+
+tt_content.stdWrap.innerWrap.cObject = CASE
+tt_content.stdWrap.innerWrap.cObject {
+  key.field = layout
+  4 = TEXT
+  4.value = <div class="container">|</div>
+}
+plugin.tx_seo {
+  config {
+    xmlSitemap {
+      sitemaps {
+        pages {
+          config {
+            excludedDoktypes = 137, 138
+            additionalWhere = AND (no_index = 0 OR no_follow = 0)
+          }
+        }
+      }
+    }
+  }
+}
+
+[traverse(request.getQueryParams(), 'tx_web2pdf_pi1/argument') == 'printPage']
+  config{
+    no_cache = 1
+    compressCss = 0
+    concatenateCss = 0  
+    compressJs = 0
+    concatenateJs = 0
+  }
+  page{
+    includeCSS >
+    includeCSS{
+      file100 = {$path.full.css}T_39/t_39_pdf.css
+      file110 = typo3conf/ext/jo_template/Resources/Public/Css/Individuell/Gotha/project_pdf.css
+    }
+    includeJS >
+  }
+  page.10.file = {$path.full.templates}T_38/PDFDetail.html
+  page.10.variables {
+    logo = TEXT
+    logo.value = /fileadmin/user_upload/Gotha/logo.svg
+  }
+[global]
+

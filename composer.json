@@ -1,0 +1,25 @@
+{
+	"name": "jo/jo_template",
+	"license": "proprietary",
+	"type": "typo3-cms-extension",
+	"version": "11.5.12",
+	"keywords": [
+		"typo3",
+		"template provider",
+		"site package"
+	],
+	"extra": {
+		"typo3/cms": {
+			"extension-key": "jo_template"
+		}
+	},
+	"require": {
+		"typo3/cms-core": "^11.5",
+		"typo3/cms-rte-ckeditor": "^11.5"
+	},
+	"autoload": {
+        "psr-4": {
+            "JO\\JoTemplate\\": "Classes"
+        }
+    }
+}
